@@ -1,7 +1,0 @@
-/* Subtle pointer-controlled motion; no automatic looping animation. */
-@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) and (min-width:801px){
- .workflow.motion-ready{--flow-x:0deg;--flow-y:-4deg;transform:perspective(1200px) rotateX(var(--flow-x)) rotateY(var(--flow-y));transition:transform .55s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .4s;transform-origin:50% 50%}
- .workflow.motion-active{transition:transform .16s ease-out,border-color .4s,box-shadow .4s;border-color:#435b7f;box-shadow:0 25px 75px #304fa82b}
- .workflow.motion-active .flow-core{box-shadow:0 0 30px #8c9aff28;transition:box-shadow .3s}
-}
-@media(prefers-reduced-motion:reduce){.workflow{transform:none!important;transition:none!important}}
