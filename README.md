@@ -26,3 +26,9 @@ NATRO-KURULUM.md dosyasını izleyin. dist içeriği web köküne yüklenir; pri
 - DOGRULAMA.md: yerel kontroller ve doğrulanmamış canlı bağlantılar.
 
 18 HTML sayfasındaki statik iletişim metinleri JavaScript olmadan da okunur. Adres/numara değişikliği için config.js ile birlikte bu statik bağlantılar da güncellenmelidir.
+
+## İletişim formu düzeltmesi
+İletişim formuna doğrudan WhatsApp paylaşımı, paylaşım öncesi onay ve sunucu hazırsa SMTP gönderimi eklendi. Form bilgilerinin yeniden asistana girilmesi gerekmez. Railway’de güncellemek için dist/iletisim.html ve dist/app.js dosyalarını depoda değiştirip yeniden dağıtın. PHP/SMTP etkinleştirilmeden otomatik e-posta çalışmaz.
+
+## Railway Hobby güncellemesi
+Railway dağıtımı için RAILWAY-KURULUM.md geçerlidir. Resend HTTPS e-posta bağlantısı ve PHP/Apache Dockerfile eklendi. API anahtarı ve doğrulanmış gönderici gereklidir. Yerel ortamda Docker bulunmadığından container derlemesi ve canlı Resend teslimatı henüz test edilmedi.

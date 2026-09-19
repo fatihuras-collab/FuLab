@@ -20,3 +20,5 @@
 
 ## Canlı doğrulanmamış noktalar
 Natro hosting, gerçek SMTP hesabı, gelen kutusuna teslimat, SPF/DKIM/DMARC, gerçek OpenAI model yanıtı ve ücretli API erişimi test edilmedi. Bunlar hesap ayarları tamamlandıktan sonra NATRO-KURULUM.md kabul listesine göre denenmelidir. Testler canlı gönderim yapılmış anlamına gelmez.
+
+Railway/Resend eki: PHP sözdizimi kontrol edildi. Docker çalışma zamanı bulunmadığından container derlemesi test edilmedi; Resend için gerçek veya taklit sağlayıcı yanıtıyla uçtan uca test henüz yapılmadı. Canlı etkinleştirme öncesi RAILWAY-KURULUM.md adımları uygulanmalıdır.
