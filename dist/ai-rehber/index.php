@@ -1,0 +1,36 @@
+<?php
+declare(strict_types=1);
+function esc($value): string { return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
+$data=json_decode(file_get_contents(__DIR__.'/content.json'),true,512,JSON_THROW_ON_ERROR);
+$slug=$_GET['yazi']??'';
+$policy=($_GET['ilkeler']??'')==='1';
+$article=null;
+foreach($data['articles'] as $candidate){if($candidate['slug']===$slug){$article=$candidate;break;}}
+if($slug!==''&&!$article){http_response_code(404);echo 'Rehber bulunamadı.';exit;}
+$title=$article ? $article['title'] : ($policy?'Yayın ilkeleri':'AI Rehber / Araştırmalar');
+$description=$article ? $article['description'] : 'İşletmeler için AI otomasyonu: maliyet yöntemleri, örnek iş akışları ve araştırmalar.';
+$canonical='https://fulabtr.net/ai-rehber/'.($article?'?yazi='.rawurlencode($article['slug']):($policy?'?ilkeler=1':''));
+header('Content-Type: text/html; charset=utf-8');
+header('X-Content-Type-Options: nosniff');
+?>
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><?=esc($title)?> | FuLab</title><meta name="description" content="<?=esc($description)?>"><meta name="theme-color" content="#06080e"><link rel="canonical" href="<?=esc($canonical)?>"><link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/research.css"><link rel="stylesheet" href="/assistant.css"><script src="/config.js" defer></script><script src="/app.js" defer></script><script src="/assistant.js" defer></script>
+<?php if($article): ?><script type="application/ld+json"><?=json_encode(['@context'=>'https://schema.org','@type'=>'Article','headline'=>$title,'description'=>$description,'dateModified'=>$article['updatedAt'],'author'=>['@type'=>'Organization','name'=>$article['author']],'mainEntityOfPage'=>$canonical],JSON_UNESCAPED_UNICODE|JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT)?></script><?php endif; ?>
+</head><body><a class="skip" href="#main">İçeriğe geç</a>
+<header class="header"><div class="container nav"><a class="brand" href="/index.html" aria-label="FuLab ana sayfa"><span class="brand-crop"><img src="/assets/fulab-original.png" alt="FuLab" width="296" height="264"></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menü <span aria-hidden="true">☰</span></button><nav id="navigation" aria-label="Ana menü"><a href="/hizmetler.html" >Hizmetler</a><a href="/cozumler.html" >Çözümler</a><a href="/sektorler.html" >Sektörler</a><a href="/surec.html" >Süreç</a><a href="/hakkimizda.html">Hakkımızda</a><a href="/ai-rehber/">AI Rehber</a><a class="mobile-contact" href="/iletisim.html">Projenizi konuşalım ↗</a></nav><a class="nav-cta" href="/iletisim.html">Projenizi konuşalım <span>↗</span></a></div></header>
+<main id="main" class="container research-main">
+<?php if($article): ?>
+<a class="back" href="/ai-rehber/">Tüm rehberler</a><article class="reading"><div class="eyebrow"><?=esc($article['category'])?></div><h1><?=esc($title)?></h1><p class="article-meta"><?=esc($article['author'])?> · Güncelleme: <?=esc($article['updatedAt'])?></p><div class="answer"><strong>Kısa cevap</strong><p><?=esc($article['summary'])?></p></div>
+<?php foreach($article['sections'] as $section): ?><section><h2><?=esc($section['heading'])?></h2><p><?=esc($section['text'])?></p></section><?php endforeach; ?>
+<section><h2>Kaynaklar</h2><ul><?php foreach($article['sources'] as $source): ?><li><a href="<?=esc($source['url'])?>" rel="noopener noreferrer"><?=esc($source['label'])?></a></li><?php endforeach; ?></ul></section><p class="revision"><?=esc($article['changeNote'])?></p></article>
+<?php elseif($policy): ?>
+<article class="reading"><a class="back" href="/ai-rehber/">Tüm rehberler</a><h1>Yayın ilkeleri</h1><h2>Kaynak ve ölçüm</h2><p>Teknik bilgiler resmi kaynaklarla kontrol edilir. Gerçek test verileri, hesaplama örnekleri ve varsayımlar ayrı belirtilir. Ölçülmemiş bir sonuç müşteri başarısı gibi sunulmaz.</p><h2>Güncelleme ve onay</h2><p>Yeni yazılar ve revizyonlar yayın öncesinde incelenir. Her yazı güncelleme tarihi ve değişiklik notu taşır. İçerik üretiminde yapay zekâ desteği kullanılabilir; son yayın kararı FuLab'a aittir.</p><h2>Görünürlük ve gelir</h2><p>Arama sonuçlarında yer almak, AI cevaplarında kaynak gösterilmek veya yayıncı ödemesi almak garanti edilmez.</p></article>
+<?php else: ?>
+<div class="eyebrow">FULAB BİLGİ MERKEZİ</div><h1>AI Rehber /<br><span class="gradient">Araştırmalar</span></h1><p class="research-intro">İşletmeniz için yapay zekâ ve otomasyonu somut sorularla değerlendirin. Maliyet yöntemleri, iş akışları ve test protokolleri.</p><div class="research-summary"><span><?=count($data['articles'])?> yayımlanan rehber</span><span><?=count($data['topics'])?> ana konu</span><a href="?ilkeler=1">Yayın ilkeleri</a></div><div class="research-grid">
+<?php foreach($data['topics'] as $i=>$topic): $published=null;foreach($data['articles'] as $a){if($a['slug']===$topic['slug']){$published=$a;break;}} ?>
+<article class="research-card"><div class="card-top"><span><?=sprintf('%02d',$i+1)?> / <?=esc($topic['category'])?></span><span class="status"><?=$published?'Yayında':'Planlandı'?></span></div><h2><?php if($published): ?><a href="?yazi=<?=esc(rawurlencode($topic['slug']))?>"><?=esc($topic['title'])?></a><?php else: ?><?=esc($topic['title'])?><?php endif; ?></h2><p><?=esc($topic['summary'])?></p><div class="card-bottom"><?php if($published): ?><a href="?yazi=<?=esc(rawurlencode($topic['slug']))?>">Rehberi oku</a><?php else: ?><span>Ölçülecek: <?=esc($topic['measurement'])?></span><?php endif; ?></div></article>
+<?php endforeach; ?>
+<?php foreach($data['articles'] as $a): if(in_array($a['slug'],array_column($data['topics'],'slug'),true))continue; ?><article class="research-card"><span class="status">Yayında</span><h2><a href="?yazi=<?=esc(rawurlencode($a['slug']))?>"><?=esc($a['title'])?></a></h2><p><?=esc($a['summary'])?></p></article><?php endforeach; ?>
+</div>
+<?php endif; ?>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><a href="/index.html" class="footer-wordmark">FuLab<span>✦</span></a><p>Daha akıllı yarınlar.<br>Bugünden başlar.</p><small>Bandırma, Balıkesir · Türkiye genelinde iş birliği</small></div><div><strong>Keşfedin</strong><a href="/hizmetler.html">Hizmetler</a><a href="/cozumler.html">Çözümler & otomasyonlar</a><a href="/sektorler.html">Sektörler</a></div><div><strong>FuLab</strong><a href="/asistan.html">Talep asistanı</a><a href="/hakkimizda.html">Hakkımızda</a><a href="/surec.html">Nasıl çalışıyoruz?</a><a href="/projeler.html">Proje senaryoları</a><a href="/iletisim.html">İletişim & teklif</a></div><div><strong>İletişim & bilgi</strong><a href="mailto:fatih@fulabtr.net">fatih@fulabtr.net</a><a href="https://wa.me/905551048080" target="_blank" rel="noopener noreferrer">WhatsApp: 0555 104 80 80</a><a href="/gizlilik.html">Gizlilik & çerezler</a><a href="/kvkk.html">Kişisel veriler / KVKK</a><a href="#main">Başa dön ↑</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> FuLab</span><span>İnsan odaklı teknoloji. Birlikte çalışan sistemler.</span></div></footer></body></html>
