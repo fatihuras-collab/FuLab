@@ -1,0 +1,33 @@
+name: AI Rehber validation
+on:
+  push:
+    paths: ['dist/ai-rehber/**', '.github/workflows/ai-rehber.yml']
+  pull_request:
+    paths: ['dist/ai-rehber/**', '.github/workflows/ai-rehber.yml']
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: PHP syntax and rendered pages
+        run: |
+          php -l dist/ai-rehber/index.php
+          php dist/ai-rehber/index.php > /tmp/rehber.html
+          php -r '$_GET["yazi"]="ai-otomasyon-maliyet-endeksi"; include "dist/ai-rehber/index.php";' > /tmp/article.html
+          php -r '$_GET["ilkeler"]="1"; include "dist/ai-rehber/index.php";' > /tmp/policy.html
+          python3 - <<'PYTEST'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('dist/ai-rehber/content.json').read_text())
+          assert len(d['topics']) == 10
+          slugs=[a['slug'] for a in d['articles']]
+          assert len(slugs)==len(set(slugs))
+          for a in d['articles']:
+              for key in ('slug','title','description','category','author','updatedAt','summary','sections','sources','changeNote'): assert a[key], key
+              assert all(s['url'].startswith('https://') for s in a['sources'])
+          assert Path('/tmp/rehber.html').read_text().count('class="research-card"') == 10
+          assert 'Kısa cevap' in Path('/tmp/article.html').read_text()
+          assert 'Yayın ilkeleri' in Path('/tmp/policy.html').read_text()
+          PYTEST
