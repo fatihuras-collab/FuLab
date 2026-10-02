@@ -1,0 +1,143 @@
+{
+  "topics": [
+    {
+      "slug": "ai-otomasyon-maliyet-endeksi",
+      "title": "Türkiye AI Otomasyon Maliyet Endeksi",
+      "category": "Maliyet",
+      "summary": "API, sunucu, mesajlaşma ve bakım giderlerini aynı hesapta birleştiren maliyet yöntemi.",
+      "question": "Bir işletmenin gerçek aylık AI otomasyon maliyeti nasıl hesaplanır?",
+      "measurement": "Token kullanımı, işlem sayısı, tekrar denemeler, kur ve bakım süresi",
+      "cadence": "Aylık"
+    },
+    {
+      "slug": "n8n-eposta-crm",
+      "title": "n8n ile e-posta ve CRM otomasyonu",
+      "category": "İş akışları",
+      "summary": "Gelen talepten müşteri kaydına, onaylı yanıttan satış takibine kadar örnek akış.",
+      "question": "Gelen e-postalar müşteri kaydına nasıl dönüşür?",
+      "measurement": "İşlenen e-posta, mükerrer kayıt, yanlış sınıflandırma ve yanıt süresi",
+      "cadence": "Aylık"
+    },
+    {
+      "slug": "whatsapp-ai-asistani-maliyeti",
+      "title": "WhatsApp AI asistanının toplam maliyeti",
+      "category": "Maliyet",
+      "summary": "Mesaj ücretleri, model kullanımı ve operatöre aktarımın toplam maliyete etkisi.",
+      "question": "WhatsApp üzerinden müşteri hizmetinin toplam gideri nedir?",
+      "measurement": "Mesaj türü, ülke, sağlayıcı ücreti ve operatöre aktarım oranı",
+      "cadence": "Aylık"
+    },
+    {
+      "slug": "telegram-whatsapp-karsilastirma",
+      "title": "Telegram ve WhatsApp: işletmeler için karşılaştırma",
+      "category": "Karşılaştırmalar",
+      "summary": "Müşteriye ulaşma, kurulum, maliyet ve ekip bildirimlerini kullanım amacına göre değerlendirme.",
+      "question": "Hangi iletişim kanalı hangi otomasyona uygundur?",
+      "measurement": "Müşteri erişimi, teslim başarısı ve toplam işletim maliyeti",
+      "cadence": "Üç aylık"
+    },
+    {
+      "slug": "teklif-hazirlama-sure-testi",
+      "title": "AI ile teklif hazırlama: süre ve doğruluk testi",
+      "category": "Araştırmalar",
+      "summary": "Aynı teklifleri manuel ve otomatik hazırlarken süreyi ve düzeltmeleri ölçme protokolü.",
+      "question": "Teklif hazırlama gerçekten ne kadar hızlanır?",
+      "measurement": "Medyan süre, düzeltme sayısı ve fiyat hatası oranı",
+      "cadence": "Yeni testte"
+    },
+    {
+      "slug": "logo-mikro-belge-isleme",
+      "title": "Logo ve Mikro verileriyle belge işleme",
+      "category": "İş akışları",
+      "summary": "Örnek müşteri ve satış çıktılarında alan eşleştirme, kontrol ve aktarım tasarımı.",
+      "question": "ERP çıktıları otomasyona nasıl güvenilir biçimde aktarılır?",
+      "measurement": "Alan eşleşmesi, eksik kayıt ve tutar tutarlılığı",
+      "cadence": "Üç aylık"
+    },
+    {
+      "slug": "kobi-hibrit-ai-asistani",
+      "title": "KOBİ için yerel ve bulut AI asistanı",
+      "category": "Karşılaştırmalar",
+      "summary": "Yerel model ile bulut modelini kodlama, donanım ve veri erişimi açısından değerlendirme.",
+      "question": "Hibrit asistan hangi işlerde fayda sağlar?",
+      "measurement": "Görev başarısı, gecikme, bellek ve görev başı gider",
+      "cadence": "Aylık"
+    },
+    {
+      "slug": "anaokulu-operasyon-otomasyonu",
+      "title": "Anaokulunda operasyon otomasyonu",
+      "category": "Sektörler",
+      "summary": "Yemek planı, stok ve idari hatırlatmaları çocuk verisi kullanmadan örnekleme.",
+      "question": "Bir anaokulunda hangi idari işler otomatikleştirilebilir?",
+      "measurement": "İdari süre, stok tutarlılığı ve kaçırılan görevler",
+      "cadence": "Üç aylık"
+    },
+    {
+      "slug": "lojistik-belge-otomasyonu",
+      "title": "Lojistikte belge ve sevkiyat takibi",
+      "category": "Sektörler",
+      "summary": "Belge sınıflandırma, eksik evrak kontrolü ve sevkiyat bildirimleri için pilot tasarımı.",
+      "question": "Lojistikte belge takibi nasıl ölçülebilir bir pilota dönüşür?",
+      "measurement": "Eksik evrak yakalama, istisna oranı ve işlem süresi",
+      "cadence": "Üç aylık"
+    },
+    {
+      "slug": "ai-otomasyon-basari-olcumu",
+      "title": "AI otomasyonunun başarısı nasıl ölçülür?",
+      "category": "Araştırmalar",
+      "summary": "Doğruluk, zaman tasarrufu, insan müdahalesi ve maliyet için ortak değerlendirme yöntemi.",
+      "question": "Bir otomasyonun iyi çalıştığı hangi verilerle anlaşılır?",
+      "measurement": "Görev başarısı, müdahale oranı, net tasarruf ve hata maliyeti",
+      "cadence": "Üç aylık"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "ai-otomasyon-maliyet-endeksi",
+      "title": "Türkiye AI Otomasyon Maliyet Endeksi: hesaplama yöntemi",
+      "description": "İşletmeler için AI otomasyonunun API, sunucu, mesajlaşma ve bakım giderlerini ölçme yöntemi ve açık varsayımlı hesaplama örneği.",
+      "category": "Maliyet",
+      "status": "published",
+      "updatedAt": "2026-10-03",
+      "author": "FuLab Araştırmalar",
+      "summary": "Aylık maliyet, yalnızca yapay zekâ API ücretinden oluşmaz. Sunucu, mesajlaşma, entegrasyon, insan kontrolü ve bakım aynı hesapta değerlendirilmelidir. Bu ilk sürüm bir hesaplama yöntemidir; Türkiye geneli ölçülmüş bir fiyat endeksi değildir.",
+      "sections": [
+        {
+          "heading": "Hesaba hangi giderler girer?",
+          "text": "Sabit giderlere barındırma, ücretli iş akışı araçları ve mevcut sisteme eklenen abonelikler girer. Değişken giderlere model çağrıları, mesajlaşma, belge işleme ve tekrar denemeler girer. İlk kurulum bedeli aylık işletim giderinden ayrı gösterilir. Bakım ve insan kontrolünün süresi de maliyet kalemi olarak kaydedilir."
+        },
+        {
+          "heading": "Model kullanımını nasıl hesaplarız?",
+          "text": "Model gideri = giriş token sayısı / fiyatlandırma birimi × giriş fiyatı + çıkış token sayısı / fiyatlandırma birimi × çıkış fiyatı. Önbellekli kullanım, ek araçlar ve farklı işleme seçenekleri varsa ayrı satırlarla hesaplanır. Kullanım miktarı tahmin yerine sağlayıcının kullanım raporundan alınır. Yabancı para giderinde kullanılan kurun tarihi ve vergi kapsamı belirtilir."
+        },
+        {
+          "heading": "Açık varsayımlı örnek",
+          "text": "Bu örnekteki süreler ve iş hacmi tamamen varsayımsaldır; müşteri ölçümü değildir. Ayda 1.000 talep, manuel işlemde talep başına 5 dakika, otomasyon sonrasında insan kontrolünde 1 dakika varsayalım. Manuel süre 5.000 dakika, kontrol süresi 1.000 dakikadır. Brüt fark 4.000 dakika, yani yaklaşık 66,7 saattir. Bakım ve hata düzeltme süreleri düşüldükten sonra net tasarruf bulunur. Bu süre farkı doğrudan nakit kazanç anlamına gelmez."
+        },
+        {
+          "heading": "Aynı senaryoları karşılaştırma yöntemi",
+          "text": "Her model ve araç için aynı belge örnekleri, aynı görev ve aynı başarı ölçütü kullanılmalıdır. Yalnızca başarılı işlerin maliyetini göstermek yerine başarısız denemeler ve insan düzeltmeleri de kaydedilir. Küçük, orta ve yoğun kullanım senaryoları işlem sayısıyla tanımlanır; çalışan sayısı tek başına iş hacmini açıklamaz."
+        },
+        {
+          "heading": "İlk pilotta tutulacak kayıtlar",
+          "text": "İşlem tarihi, görev türü, kullanılan model, giriş ve çıkış kullanımı, işlem süresi, başarılı olup olmadığı, insan düzeltme süresi ve toplam ücret tutulur. Müşteri bilgisi yayımlanmaz. Raporlarda anonimleştirilmiş toplamlar kullanılır; örneklem büyüklüğü ve test dönemi açıkça belirtilir."
+        },
+        {
+          "heading": "Endeks ne zaman veri sunacak?",
+          "text": "Bu sayfanın ilk sürümü ölçüm protokolünü tanımlar. Gerçek pilotlardan veri toplandığında, kullanılan hizmetlerin tarihli resmi fiyatlarıyla birlikte karşılaştırma tabloları eklenebilir. Sonraki sürümlerde varsayım, resmi tarife ve gerçek ölçüm birbirinden ayrı gösterilecektir. Bir hizmetin fiyatı doğrulanamazsa sayı uydurulmaz; veri eksik olarak işaretlenir."
+        }
+      ],
+      "sources": [
+        {
+          "label": "OpenAI — değerlendirme rehberi",
+          "url": "https://developers.openai.com/api/docs/guides/evals"
+        },
+        {
+          "label": "Google Search Central — yapay zekâ ile üretilen içerik",
+          "url": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content"
+        }
+      ],
+      "changeNote": "İlk sürüm: hesaplama yöntemi ve açıkça varsayımsal süre örneği. Ölçülmüş fiyat verisi henüz yok."
+    }
+  ]
+}
