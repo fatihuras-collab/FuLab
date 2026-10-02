@@ -138,6 +138,384 @@
         }
       ],
       "changeNote": "İlk sürüm: hesaplama yöntemi ve açıkça varsayımsal süre örneği. Ölçülmüş fiyat verisi henüz yok."
+    },
+    {
+      "slug": "n8n-eposta-crm",
+      "title": "n8n ile e-posta ve CRM otomasyonu",
+      "description": "Gelen e-postayı kontrollü bir CRM kaydına dönüştürmek için n8n akışı, mükerrer kayıt önleme ve pilot ölçümü.",
+      "category": "İş akışları",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-03",
+      "summary": "E-postayı CRM’e aktarmadan önce göndereni, talep türünü ve tekrar kayıt ihtimalini kontrol edin. İlk pilotta otomatik yanıt yerine ekip onaylı yanıt taslağı kullanın.",
+      "sections": [
+        {
+          "heading": "İlk akışın kapsamı",
+          "text": "FuLab’ın önerdiği başlangıç akışı şöyledir: e-posta alımı, alanların düzenlenmesi, mükerrer kontrolü, talep sınıflandırması, CRM taslağı ve ekip onayı. Önce tek bir posta kutusu ve tek bir talep türü seçin. Örneğin teklif isteyen mesajları ele alın; muhasebe, işe alım ve genel yazışmaları aynı pilotun içine katmayın. Her adım için sorumlu kişiyi ve hata durumunda dönüş yolunu yazın."
+        },
+        {
+          "heading": "E-postadan alınacak alanlar",
+          "text": "n8n’in IMAP tetikleyicisi bir posta sunucusundan mesaj alabilir. Önerilen kayıt şeması mesaj kimliği, alım zamanı, gönderen, konu, talep özeti, sınıflandırma ve CRM kayıt kimliğidir. Ekleri yalnızca işlem için gerekiyorsa indirin. Modelden müşteri adı veya telefon üretmesini istemeyin; bulunmayan alanı boş bırakın. E-posta gövdesindeki talimatlar otomasyonun yetkilerini değiştirmemelidir."
+        },
+        {
+          "heading": "Aynı talebin iki kez işlenmesini önleme",
+          "text": "İşlem günlüğünde posta kutusu ve mesaj kimliğinden bir anahtar oluşturun. Anahtarı kalıcı kayıt alanında benzersiz tutun ve CRM yazma işlemiyle ilişkilendirin. Mesaj kimliği eksikse tanımlanmış bir yedek eşleştirme yöntemi ve insan kontrolü kullanın. Bağlantı yeniden geldiğinde aynı mesajın alınması, ikinci müşteri veya ikinci yanıt üretmemelidir. Aynı müşterinin yeni talebi ise önceki kaydın üzerine yanlışlıkla yazılmamalıdır."
+        },
+        {
+          "heading": "Onay ve hata yönetimi",
+          "text": "CRM kaydı başarısızsa mesajı işlendi diye kapatmayın. Bekleyen, işleniyor, onay bekliyor, tamamlandı ve hata durumlarını ayrı tutun. Geçici bağlantı hatalarında sınırlı tekrar deneyin; yetki veya alan doğrulama hatasını ekibe aktarın. Dışarı gidecek yanıtın alıcısı ve içeriği onay ekranında birlikte gösterilsin. Başarılı CRM kaydı ile başarılı e-posta gönderimi farklı olaylardır."
+        },
+        {
+          "heading": "Pilotun kabul ölçütü",
+          "text": "Önerilen pilotta normal talep, tekrar gönderim, eksik iletişim, bozuk ek ve CRM kesintisi örneklerini deneyin. İşlenen mesaj, mükerrer kayıt, yanlış sınıflandırma, insan düzeltme süresi ve yanıtın hazırlanma süresini kaydedin. Kabul koşullarını başlamadan belirleyin; örneğin mükerrer yanıt oluşmaması ve tüm hataların bir sorumluya ulaşması. Bunlar önerilen testlerdir; bu sayfada ölçülmüş sonuç sunulmuyor."
+        }
+      ],
+      "sources": [
+        {
+          "label": "n8n — Email Trigger (IMAP)",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.emailimap"
+        },
+        {
+          "label": "OpenAI — değerlendirme iş akışları",
+          "url": "https://developers.openai.com/api/docs/guides/evals"
+        }
+      ],
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+    },
+    {
+      "slug": "whatsapp-ai-asistani-maliyeti",
+      "title": "WhatsApp AI asistanının toplam maliyeti",
+      "description": "WhatsApp AI asistanı için mesaj, model, sağlayıcı ve insan kontrol giderlerini birlikte hesaplama rehberi.",
+      "category": "Maliyet",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-03",
+      "summary": "Toplam gideri mesaj bedeliyle sınırlamayın. Meta tarifesi, kullandığınız sağlayıcının ücretleri, model kullanımı, barındırma ve operatöre aktarım birlikte hesaplanmalıdır.",
+      "sections": [
+        {
+          "heading": "Maliyet kalemlerini ayırın",
+          "text": "Bütçeyi kurulum ve aylık işletim olarak ikiye ayırın. Kurulumda ihtiyaç analizi, bilgi kaynağının hazırlanması, entegrasyon, test ve ekip eğitimi bulunur. İşletimde mesajlaşma, AI çağrıları, sunucu, izleme, destek ve insan kontrolü bulunur. Bir sağlayıcının paket fiyatının hangi kalemleri içerdiğini yazılı olarak kontrol edin. Vergi, kur tarihi ve ücretin kapsadığı dönem hesapta görünür olsun."
+        },
+        {
+          "heading": "Tarife hangi verilere bağlı?",
+          "text": "WhatsApp’ın resmi fiyatlandırma sayfası teslim edilen mesajlar, alıcının pazarı ve mesaj kategorisi üzerinden ücret yapısını açıklar. Bütçeye alınacak kategori ve istisnalar için yürürlükteki resmi tarife ile sağlayıcı sözleşmesini birlikte kontrol edin. Mesaj kategorilerini tek bir ortalama bedelde birleştirmek yerine ayrı satırlar kullanın. Bu rehber belirli bir Türkiye birim fiyatı veya ücretsiz kullanım kotası ilan etmez; tarife değiştiğinde hesap güncellenmelidir."
+        },
+        {
+          "heading": "Hesaplama şablonu",
+          "text": "Aylık toplam = mesaj gideri + model gideri + sağlayıcı aboneliği + barındırma + bakım + insan kontrolü. Mesaj giderinde her ücretli türün teslim sayısını ilgili birim fiyatla çarpın. Model giderinde giriş, çıkış ve varsa ek araç kullanımını sağlayıcı raporundan alın. Bir müşteri talebi birden fazla mesaj ve model çağrısı doğurabilir; talep sayısını doğrudan mesaj sayısı olarak kullanmayın. Tekrar denemelerin kullanımını da hesaba katın."
+        },
+        {
+          "heading": "Asistanın görev sınırı",
+          "text": "Önerilen ilk sürüm çalışma saatleri, ürün bilgisi ve talep toplama gibi sınırlı görevleri yürütür. İade, fiyat istisnası, özel indirim ve hesap değişikliği gibi kararları yetkili ekibe aktarır. Yanıt bulunamazsa tahmin etmek yerine aktarım nedeni üretir. İşlem kaydı, kullanıcıya verilen yanıt ve operatörün yaptığı işlem ilişkilendirilir. Aktarımın tamamlanması, yalnızca bir bildirim gönderilmesiyle aynı şey değildir."
+        },
+        {
+          "heading": "Bütçeyi pilotla doğrulama",
+          "text": "Normal talep, uzun konuşma, yanlış anlaşılma ve operatöre aktarım senaryolarını küçük bir pilotta izleyin. Talep başına mesaj, model kullanımı, tamamlanma oranı, insan süresi ve toplam gideri hesaplayın. Düşük, orta ve yüksek kullanım için aynı başarı koşullarını kullanın. Bu sayfa bir teklif veya ölçülmüş fiyat tablosu değildir; işletmenin gerçek kullanım kayıtları girildiğinde kendi bütçesini hesaplayabileceği yöntemi sunar."
+        }
+      ],
+      "sources": [
+        {
+          "label": "WhatsApp — Business Platform fiyatlandırması",
+          "url": "https://whatsappbusiness.com/products/platform-pricing/"
+        },
+        {
+          "label": "OpenAI — değerlendirme iş akışları",
+          "url": "https://developers.openai.com/api/docs/guides/evals"
+        }
+      ],
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+    },
+    {
+      "slug": "telegram-whatsapp-karsilastirma",
+      "title": "Telegram ve WhatsApp: işletmeler için karşılaştırma",
+      "description": "Telegram ve WhatsApp’ı müşteri erişimi, ekip bildirimleri, kurulum ve toplam gider açısından değerlendirme yöntemi.",
+      "category": "Karşılaştırmalar",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-03",
+      "summary": "Kanalı yalnızca API maliyetine göre seçmeyin. Müşterilerin kullandığı kanal, görevin amacı, ekip alışkanlıkları ve tamamlanan işlem başına gider birlikte değerlendirilmelidir.",
+      "sections": [
+        {
+          "heading": "Önce iletişimin amacını belirleyin",
+          "text": "Müşteri talebi toplamak, ekip içi uyarı göndermek ve sevkiyat durumunu bildirmek farklı ihtiyaçlardır. FuLab’ın önerisi her kanal için aynı görevi ve aynı başarı ölçütünü kullanmaktır. Müşterilerin mevcut kullanımını kendi kayıtlarınız veya küçük bir anketle ölçün; ülke geneli popülerlik varsayımını işletmenizin kitlesi için sonuç kabul etmeyin. Kanal değiştirmek müşteriye ek hesap veya uygulama yükü getirebilir."
+        },
+        {
+          "heading": "Telegram’ın teknik başlangıcı",
+          "text": "Telegram botu bir arka uç uygulamasına bağlanır. Resmi SSS, güncellemelerin webhook veya long polling ile alınabileceğini belirtir; iki yöntemin birlikte kullanılması uygun değildir. FuLab pilotunda ekip bildirimleri için olay kimliği, yetkili sohbet ve sorumlu kişi tanımlanır. Mesaj limiti, tekrar deneme ve hata kodları hesaba katılır. Standart bot kullanımı için mesaj ücretinin olmaması, sunucu ve bakım giderinin olmadığı anlamına gelmez."
+        },
+        {
+          "heading": "WhatsApp tarafında değerlendirme",
+          "text": "WhatsApp Business Platform için kategori ve pazar bazındaki yürürlükte olan fiyatlandırma ayrıca kontrol edilmelidir. Sağlayıcı paneli, operatöre aktarım, müşteri yanıtı takibi ve mevcut telefon numarasıyla kullanım koşulları seçilen kurulumda incelenir. Kişisel uygulamada elle mesaj göndermek ile API üzerinden işletme otomasyonu aynı kurulum değildir. FuLab bu karşılaştırmada iki platform için de tüm kullanım türlerini kapsayan ücretsiz çalışma sözü vermez."
+        },
+        {
+          "heading": "Aynı senaryoyu iki kanalda deneyin",
+          "text": "Önerilen testte bir müşteri talebi alınır, kısa bir özet hazırlanır, ekibe bildirim gider ve sorumlu kişi işi tamamlar. Her kanalda teslim başarısını, ilk insan yanıtına kadar geçen süreyi ve tamamlanan talep oranını ölçün. Kullanıcı veya personelin ek işlem yapması gerekiyorsa bu süreyi ekleyin. Gönderildi, teslim edildi, görüldü ve görev tamamlandı durumlarını tek başarı değeri altında toplamayın."
+        },
+        {
+          "heading": "Karar ve birlikte kullanım",
+          "text": "Ekip zaten Telegram kullanıyorsa iç bildirimler orada, müşteri iletişimi müşterinin kullandığı kanalda yürütülebilir. Bu bir tasarım seçeneğidir, bütün işletmeler için üstünlük sonucu değildir. Ortak CRM veya görev kaydı tek kaynak olsun; kanallar yalnızca bu kayda ulaşmayı kolaylaştırsın. İki kanala aynı olayın düşmesi iki ayrı iş emri üretmemelidir. Kararı erişim, tamamlanma, işletim gideri ve destek yüküyle birlikte belgeleyin."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Telegram — Bot SSS",
+          "url": "https://core.telegram.org/bots/faq"
+        },
+        {
+          "label": "WhatsApp — Business Platform fiyatlandırması",
+          "url": "https://whatsappbusiness.com/products/platform-pricing/"
+        }
+      ],
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+    },
+    {
+      "slug": "teklif-hazirlama-sure-testi",
+      "title": "AI ile teklif hazırlama: süre ve doğruluk testi",
+      "description": "AI ile teklif hazırlamanın süre ve doğruluk etkisini aynı örnekler üzerinden ölçmek için pilot protokolü.",
+      "category": "Araştırmalar",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-03",
+      "summary": "AI destekli teklifin hızını, düzeltme ve onay süresi dahil ölçün. Fiyat, miktar ve kapsam hatası içeren hızlı bir taslağı başarılı teklif saymayın.",
+      "sections": [
+        {
+          "heading": "Karşılaştırılabilir teklifler seçin",
+          "text": "FuLab’ın önerdiği pilot, aynı fiyat listesi ve aynı talep verisiyle manuel ve AI destekli teklif hazırlamayı karşılaştırır. Kolay, eksik bilgili ve çok kalemli örnekleri ayrı gruplara ayırın. Örnekleri gerçek müşteri bilgileri yerine anonim veya kurgu verilerle hazırlayabilirsiniz. Modelin fiyatı kendisinin üretmesine izin vermeyin; onaylı liste ve hesaplama kuralları kullanılsın. Teste başlamadan kabul koşullarını yazın."
+        },
+        {
+          "heading": "Başlangıç ve bitiş anı",
+          "text": "Süreyi talebin açılmasından gönderime hazır, onaylanmış teklifin oluşmasına kadar ölçün. Bilgi arama, veri girişi, model bekleme, düzeltme ve insan onayı bu süreye dahildir. Yalnızca metnin oluştuğu saniyeleri karşılaştırmayın. Aynı kişinin ikinci çalışmada örneği hatırlaması sonucu etkileyebilir; çalışma sırasını değiştirin veya denk örnekler kullanın. Kullanılan model, şablon ve fiyat listesinin sürümünü kaydedin."
+        },
+        {
+          "heading": "Doğruluk kontrol listesi",
+          "text": "Her teklif için müşteri talebine uygun kalemler, miktar, birim fiyat, para birimi, hesaplanan toplam, teslim süresi ve kapsam dışı işler kontrol edilir. Eksik alan varsa modelin açıklama istemesi beklenir. Hesaplamaları model metninden bağımsız olarak doğrulayın. Fiyat istisnası ve indirim yetkisini insan onayına bağlayın. Kritik fiyat hatası bulunan belge, metni düzgün olsa bile başarısız işaretlenmelidir."
+        },
+        {
+          "heading": "Kaydedilecek ölçümler",
+          "text": "Önerilen kayıtlar teklif kimliği, yöntem, toplam süre, düzeltme sayısı, kritik hata, onay sonucu ve kullanım gideridir. Her yöntem için medyan süreyi ve başarılı teklif oranını ayrı raporlayın. Net süre farkını aynı başarı koşulunu sağlayan örnekler üzerinden yorumlayın; başarısız örneklerin sayısını ayrıca görünür tutun. Birkaç kolay tekliften bütün satış sürecine genelleme yapmayın. Tekrar eden başarısızlıkları hata türüne göre sınıflandırın."
+        },
+        {
+          "heading": "Sonucun kullanım sınırı",
+          "text": "Bu rehberde tamamlanmış bir süre testi veya yüzde tasarruf sonucu yoktur. Pilot tamamlandığında örnek sayısı, tarih aralığı, iş hacmi, model ve değerlendirme koşullarıyla birlikte sonuç eklenebilir. Daha hızlı hazırlanan teklifin satışa dönüşmesi ayrı bir ölçümdür. İlk devreye almada AI yalnızca taslak hazırlasın; dışarı gönderilecek belgeyi teklif sorumlusu onaylasın. Model veya şablon değişince aynı test örnekleri tekrar çalıştırılsın."
+        }
+      ],
+      "sources": [
+        {
+          "label": "OpenAI — değerlendirme iş akışları",
+          "url": "https://developers.openai.com/api/docs/guides/evals"
+        },
+        {
+          "label": "Mikro — API entegrasyon rehberi",
+          "url": "https://apidocs.mikro.com.tr/guides"
+        }
+      ],
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+    },
+    {
+      "slug": "logo-mikro-belge-isleme",
+      "title": "Logo ve Mikro verileriyle belge işleme",
+      "description": "Logo ve Mikro verileriyle belge işlemede alan eşleştirme, test şirketi ve kontrollü aktarım yöntemi.",
+      "category": "İş akışları",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-03",
+      "summary": "Önce ürününüzün sürümünü, desteklenen bağlantısını ve test ortamını doğrulayın. Belgeden çıkarılan bilgiyi doğrulamadan muhasebe kaydına dönüştürmeyin.",
+      "sections": [
+        {
+          "heading": "Her kurulum aynı değildir",
+          "text": "Logo ve Mikro adları tek bir API sözleşmesi veya tek bir ürün anlamına gelmez. Kullanılan ürün, sürüm, lisans, firma ve çalışma dönemi belirlenmelidir. Logo’nun resmi entegrasyon çözümü veri alışverişi ve API desteğini açıklar; Mikro’nun resmi rehberi REST ve JSON tabanlı iletişimi anlatır. Bunlar mevcut işletme kurulumunun her işlemi desteklediği anlamına gelmez. İlgili ürünün yetkili teknik dokümanı ve erişim koşullarıyla ilerleyin."
+        },
+        {
+          "heading": "Belgeyi kayıt şemasına dönüştürme",
+          "text": "FuLab’ın önerdiği ara şemada belge kimliği, tarih, cari kod, stok veya hizmet kodu, miktar, birim, para birimi ve tutarlar bulunur. Alanın belgedeki konumu veya kaynak satırı da saklanır. Eksik alanları AI ile tamamlamak yerine inceleme kuyruğuna alın. Tarih biçimi, ondalık ayırıcı ve birim dönüşümleri açık kurallarla düzenlensin. Aynı belgenin yeniden yüklenmesi tekrar kayıt oluşturmamalıdır."
+        },
+        {
+          "heading": "Eşleştirme ve tutarlılık kontrolleri",
+          "text": "Cari veya stok eşleştirmesi yalnızca benzer ada dayanmasın; işletmenin onaylı kod tablosu kullanılsın. Belgede belirtilen miktar ile kalem toplamlarını, ara toplam ile genel toplamı kontrol edin. Vergi hesaplamasını kurumun onaylı muhasebe kuralları ve yazılım ayarlarıyla doğrulayın. Model çıktısını hesaplama otoritesi kabul etmeyin. Belirsiz eşleşme, eksik kod veya tutarsız toplam aktarımı durdurup sorumlu kişinin incelemesine gitmelidir."
+        },
+        {
+          "heading": "Testten canlı sisteme geçiş",
+          "text": "Önerilen pilotta önce kurgu belgeler ve ayrı test firmasıyla yalnızca okuma ve taslak işlemleri yürütülür. Sonra onaylı tek bir kayıt türünde yazma denenir ve yazılan kaydın çıktısı tekrar okunur. API parolası ve anahtarı web sayfasına veya kamuya açık repoya konmaz. Başarısız yazma işleminde aynı belgeyi tekrar denemeden önce kayıt oluşup oluşmadığını kontrol edin. Geri alma yöntemi ve erişim sorumlusu baştan tanımlansın."
+        },
+        {
+          "heading": "Pilot raporu",
+          "text": "Alan bazında doğru çıkarım, doğru kod eşleşmesi, tutar tutarlılığı, mükerrer kayıt ve insan düzeltme süresini ölçün. Farklı belge düzenlerini ayrı raporlayın; bir şablonun başarısı başka bir şablona otomatik aktarılmaz. Bu sayfa bir muhasebe entegrasyonunun kurulmuş veya mevzuata uygunluğunun onaylanmış olduğunu iddia etmez. Amaç işletmenin teknik ekibiyle doğrulanabilecek kontrollü aktarım planını oluşturmaktır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Mikro — API entegrasyon rehberi",
+          "url": "https://apidocs.mikro.com.tr/guides"
+        },
+        {
+          "label": "Logo — veri toplama ve entegrasyon",
+          "url": "https://www.logo.com.tr/urun/logo-veri-toplama-ve-entegrasyon-cozumu"
+        }
+      ],
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+    },
+    {
+      "slug": "kobi-hibrit-ai-asistani",
+      "title": "KOBİ için yerel ve bulut AI asistanı",
+      "description": "KOBİ için yerel ve bulut AI asistanını görev başarısı, donanım, veri erişimi ve toplam giderle karşılaştırma.",
+      "category": "Karşılaştırmalar",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-03",
+      "summary": "Yerel ve bulut modelleri aynı işletme görevleriyle karşılaştırın. Yerel çalışması tek başına daha ucuz, daha doğru veya verinin hiç dışarı çıkmadığı anlamına gelmez.",
+      "sections": [
+        {
+          "heading": "İşletme görevini tanımlayın",
+          "text": "Önce asistanın ne yapacağını belirleyin: bilgi arama, talep özeti, belge alanı çıkarma veya yanıt taslağı. Her görev için doğru sonuç ve insan onayı sınırı yazılsın. FuLab’ın önerdiği karşılaştırma aynı örnekleri iki kurulumda çalıştırır. Model adının yanında model sürümü, istem, kullanılan bilgi kaynağı ve çalışma ayarları kaydedilir. Genel sohbet yeteneği işletme verisinde doğru yanıt vermenin kanıtı değildir."
+        },
+        {
+          "heading": "Yerel ve bulut bağlantısı",
+          "text": "Ollama’nın resmi API dokümanı yerel ve bulut model kullanımını ayrı bağlantı seçenekleri olarak açıklar. Yerel sunucuya bağlanan bir uygulamanın hangi modeli ve hangi ek servisleri kullandığı ayrıca kontrol edilmelidir. Belge işleme, arama, günlük kaydı veya harici araç çağrıları farklı hizmetlere veri gönderebilir. Veri akışını adım adım çıkarın; yalnızca modelin çalıştığı yere bakarak bütün sistem için gizlilik sonucu vermeyin."
+        },
+        {
+          "heading": "Donanım ve işletim gideri",
+          "text": "Yerel kullanımda donanım alımı, amortisman, elektrik, yedekleme, bakım ve ekip zamanı bulunur. Bulutta model kullanımı, barındırma, veri aktarımı ve sağlayıcı hizmetleri bulunabilir. Aynı iş hacminde aylık toplamı ve başarılı görev başına gideri karşılaştırın. Yerel modelin uzun yanıt süresi çalışanı bekletiyorsa bunu ölçün. Boşta kalan donanımın giderini yalnızca aktif saatlere yazıp toplam bütçeden kaybetmeyin."
+        },
+        {
+          "heading": "Hibrit akışın tasarımı",
+          "text": "Önerilen hibrit yapı önce veri sınıflandırması yapar. Yerel işlenmesi belirlenen belgeler yerel görev kuyruğuna gider; dış hizmet kullanımına izin verilen görevler buluta yönlendirilir. Yerel model zorlandığında otomatik olarak bütün belgeyi buluta yollamak yerine izinli alanları veya anonim özeti kullanın. Hiçbir yol uygun değilse işi insan ekibine aktarın. Her yönlendirme kararında kullanılan hizmet ve gönderilen veri kapsamı izlenebilir olsun."
+        },
+        {
+          "heading": "Karar verecek pilot",
+          "text": "Normal, uzun, eksik bilgili ve yanıltıcı belgeleri içeren bir örnek set hazırlayın. Doğru sonuç, dayanak gösterme, insan düzeltmesi, ortanca ve yüksek gecikme, bellek kullanımı ve görev başı gideri ölçün. İnternet kesintisi ve yerel makine kapanması durumlarını ayrıca deneyin. Bu rehber belirli bir model veya bilgisayar için performans sonucu sunmaz; donanım ve model seçimi pilotun koşullarıyla birlikte yapılmalıdır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ollama — yerel ve bulut API",
+          "url": "https://docs.ollama.com/api/introduction"
+        },
+        {
+          "label": "OpenAI — değerlendirme iş akışları",
+          "url": "https://developers.openai.com/api/docs/guides/evals"
+        }
+      ],
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+    },
+    {
+      "slug": "anaokulu-operasyon-otomasyonu",
+      "title": "Anaokulunda operasyon otomasyonu",
+      "description": "Anaokulunda çocuk verisi kullanmadan stok, satın alma ve idari hatırlatmalar için operasyon pilotu.",
+      "category": "Sektörler",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-03",
+      "summary": "İlk otomasyon pilotunu stok, satın alma ve idari görevlerle sınırlandırın. Çocukların sağlık, gelişim veya davranış verilerini genel amaçlı bir içerik asistanına taşımayın.",
+      "sections": [
+        {
+          "heading": "Küçük bir idari süreç seçin",
+          "text": "FuLab’ın önerdiği başlangıç, temizlik sarf malzemesi stok takibi veya idari işlerin hatırlatılmasıdır. Örneğin malzemenin mevcut miktarı, asgari stok seviyesi ve sorumlu kişi tutulur; eşik altına inince satın alma taslağı oluşur. Yemek planı otomasyonu kullanılacaksa kurumun yetkili kişisinin onaylı planı esas alınır. Asistan çocuklara özel beslenme veya sağlık kararı üretmez. Bu sayfa eğitim veya sağlık değerlendirmesi sunmaz."
+        },
+        {
+          "heading": "Kullanılacak kayıt şeması",
+          "text": "Önerilen stok kaydı malzeme kodu, birim, mevcut miktar, sayım tarihi ve sorumlu rolden oluşur. Görev kaydı iş adı, son tarih, durum ve tamamlanma zamanını içerir. Pilot için çocuk adı, fotoğrafı, aile iletişimi veya sağlık kaydı gerekli değildir. Örnek veriler kurgu olabilir. Bildirim mesajında bütün belgeyi paylaşmak yerine görev kimliği ve yetkili kişinin ulaşacağı kayıt bağlantısını kullanın."
+        },
+        {
+          "heading": "Zamanlama ve tamamlanma",
+          "text": "n8n Schedule Trigger belirlenen zamanlarda iş akışı başlatabilir; çalışma saati için iş akışının zaman dilimi ve yayın durumu kontrol edilir. FuLab tasarımında hatırlatma gönderimi ile görevin tamamlanması ayrı tutulur. Gün sonuna kadar tamamlanmayan görev sorumluya tekrar gösterilir; aynı iş için sınırsız bildirim gönderilmez. Kurum takvimi, tatil veya kapanış günü varsa hatırlatma listesi bunu dikkate almalıdır."
+        },
+        {
+          "heading": "Onay ve istisnalar",
+          "text": "Satın alma önerisi otomatik sipariş veya ödeme anlamına gelmesin. Yetkili kişi miktarı ve ihtiyaç durumunu incelesin. Sayım gecikmişse sistem güncel stok gibi davranmasın; son sayım tarihini göstersin. Bir görev yanlışlıkla tamamlandıysa geçmiş kayıt korunarak yeniden açılabilsin. Erişim rollerini günlük iş ihtiyacına göre belirleyin ve kurumun mevcut veri yönetimi kurallarıyla uyumunu yetkili ekiple kontrol edin."
+        },
+        {
+          "heading": "Pilotun ölçümü",
+          "text": "Önerilen pilotta kaçırılan idari görev, yanlış stok uyarısı, mükerrer bildirim ve personelin harcadığı süre kaydedilir. Sistemin uyarı vermediği günlerde de çalışma kaydı kontrol edilir; sessizlik başarı kanıtı değildir. Normal işlem, eksik sayım, internet kesintisi ve değişen görev sorumlusu test edilir. Bu sayfada anaokulu sahasından ölçülmüş tasarruf sonucu bulunmuyor; amaç çocuk verisi gerektirmeyen idari bir deneme planıdır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "n8n — Schedule Trigger",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger"
+        },
+        {
+          "label": "OpenAI — değerlendirme iş akışları",
+          "url": "https://developers.openai.com/api/docs/guides/evals"
+        }
+      ],
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+    },
+    {
+      "slug": "lojistik-belge-otomasyonu",
+      "title": "Lojistikte belge ve sevkiyat takibi",
+      "description": "Lojistikte belge kontrolü ve sevkiyat takibi için ortak kimlik, durum kaydı ve kontrollü bildirim akışı.",
+      "category": "Sektörler",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-03",
+      "summary": "Belge, sevkiyat ve bildirim kayıtlarını ortak bir sevkiyat kimliğine bağlayın. Eksik veya çelişkili evrakı tahmin ederek tamamlamak yerine sorumluya aktarın.",
+      "sections": [
+        {
+          "heading": "Tek bir sevkiyat kaydı oluşturun",
+          "text": "FuLab’ın önerdiği yapı, sevkiyat kimliği etrafında belge listesi ve olay günlüğü tutar. Sipariş referansı, yükleme planı, ilgili evrak, sorumlu rol ve son doğrulanmış durum bu kayda bağlanır. Belge dosyasının adı tek başına sevkiyat kimliği değildir. Bir e-postada birden fazla sevkiyat varsa kayıtlar ayrılmalı; aynı evrakın tekrar gönderilmesi ikinci sevkiyat üretmemelidir. İlk pilotta tek operasyon türü ve tek ekip seçin."
+        },
+        {
+          "heading": "Evrak kontrolünü kurallara bağlayın",
+          "text": "Operasyon ekibi her sevkiyat türü için gereken evrak listesini tanımlar. Sistem varlık, okunabilirlik, referans eşleşmesi ve alan tutarlılığını kontrol eder. Model bir belgenin türünü tahmin edebilir; ancak eksik belgenin var olduğunu veya resmi geçerliliğini onaylayamaz. Referans, tarih veya miktar çelişkisi inceleme kuyruğuna düşer. Hangi belgenin güncel sürüm olduğu kayıt geçmişiyle gösterilir."
+        },
+        {
+          "heading": "Olay ve durum farklıdır",
+          "text": "Bir belgenin gelmesi, aracın yola çıkması ve teslimatın doğrulanması farklı olaylardır. Her olayda kaynak, olay zamanı, sisteme giriş zamanı ve doğrulama durumu saklanır. Geç gelen bir kayıt yeni durumun üzerine eski bilgiyi yazmamalıdır. Teslimat yalnızca ilgili yetkili kaynağın doğrulanmış olayıyla tamamlandı sayılır. FuLab’ın önerdiği modelde AI özeti, operasyon kaydının yerini almaz."
+        },
+        {
+          "heading": "Bildirim ve günlük kontrol",
+          "text": "E-postadan belge alınacaksa IMAP tetikleyicisi bir giriş seçeneğidir; günlük eksik evrak listesi zamanlanmış kontrolle hazırlanabilir. Önerilen bildirim yalnızca sevkiyat kimliği, eksik işlem ve sorumlu rolü içerir. Gönderim, teslim ve operatörün işi çözmesi ayrı kaydedilir. Günlük kontrolün son çalışma zamanı izlenir; işlem başarısızsa veri yok gibi raporlanmaz. Kesinti sonrası bekleyen işler ortak kimliklerle yeniden kontrol edilir."
+        },
+        {
+          "heading": "Pilotun kabul ölçütleri",
+          "text": "Eksik evrak yakalama, yanlış eşleştirme, mükerrer kayıt, istisna çözüm süresi ve zamanında bildirim ölçülür. Önerilen testler tekrar belge, okunamayan dosya, farklı referans, sonradan gelen düzeltme ve bağlantı kesintisidir. Bu rehber taşımacılık mevzuatı veya belirli evrakın hukuki yeterliliği konusunda hüküm vermez; gerekli evrakı operasyonun yetkili kişileri belirler. Ölçülmüş saha sonucu henüz sunulmuyor."
+        }
+      ],
+      "sources": [
+        {
+          "label": "n8n — Email Trigger (IMAP)",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.emailimap"
+        },
+        {
+          "label": "n8n — Schedule Trigger",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger"
+        }
+      ],
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+    },
+    {
+      "slug": "ai-otomasyon-basari-olcumu",
+      "title": "AI otomasyonunun başarısı nasıl ölçülür?",
+      "description": "AI otomasyonunda görev başarısı, insan müdahalesi, net zaman kazancı ve maliyet için ortak değerlendirme yöntemi.",
+      "category": "Araştırmalar",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-03",
+      "summary": "Başarıyı yalnızca kaç işlemin çalıştığıyla ölçmeyin. Doğru tamamlanan görev, insan müdahalesi, net süre farkı ve bütün denemeleri kapsayan gider birlikte raporlanmalıdır.",
+      "sections": [
+        {
+          "heading": "Önce doğru sonucu tanımlayın",
+          "text": "Bir e-postanın CRM’e aktarılması, doğru müşteriyle eşleşmesi ve ekibin gereken işi yapması ayrı başarı koşullarıdır. FuLab’ın önerisi her görev için beklenen çıktı, kritik hata ve insan onayı noktasını yazmaktır. Normal örneklerin yanında eksik veri, çelişki ve bağlantı kesintisi örnekleri eklenir. Başarı koşullarını sonuçları gördükten sonra değiştirmek karşılaştırmayı bozabilir; başlangıç sürümü saklansın."
+        },
+        {
+          "heading": "Ölçüm kartı",
+          "text": "Görev başarısı = kabul koşullarını sağlayan tamamlanmış görev / değerlendirilen görev. İnsan müdahalesi = insan düzeltmesi veya aktarım gerektiren görev / toplam görev. Başarılı görev başı gider = bütün denemelerin toplam gideri / başarılı görev. Başarı sayısı sıfırsa son değeri hesaplanamaz olarak gösterin. Hız için yalnızca ortalamaya bakmayın; medyan ve uzun beklemeleri ayrıca raporlayın. Bunlar FuLab’ın önerdiği ortak rapor tanımlarıdır."
+        },
+        {
+          "heading": "Net zaman ve gerçek gider",
+          "text": "Manuel süreç ile otomasyon sürecini aynı başlangıç ve bitiş noktalarında ölçün. Otomasyon süresine insan kontrolü, düzeltme, tekrar işlem ve bakım payı girsin. Net süre farkı, manuel süre ile bu toplamın farkıdır. Zaman kazanmak doğrudan gelir artışı veya personel gideri azalması anlamına gelmez. Model çağrıları yanında barındırma, mesajlaşma, bakım ve başarısız denemeler bütçede yer alsın."
+        },
+        {
+          "heading": "Günlük kayıt ve inceleme",
+          "text": "Önerilen olay kaydı görev kimliği, zaman, iş akışı sürümü, durum, hata türü, insan süresi ve gider içerir. Kişisel içerikleri herkese açık rapora taşımadan anonim toplamlar üretin. Günlük veri alımı başarısızsa eksik gün olarak işaretleyin; sıfır işlem veya kusursuz başarı olarak yorumlamayın. Günlük toplama ile aylık yayın ayrı süreçlerdir. Rapor, verinin kapsadığı tarih aralığını ve örnek sayısını göstermelidir."
+        },
+        {
+          "heading": "Değişikliklerden sonra aynı test",
+          "text": "OpenAI’ın değerlendirme rehberi, belirlenmiş örneklerle model çıktısının sistematik değerlendirilmesini ele alır. FuLab uygulamasında model, istem veya entegrasyon değiştiğinde saklanan örnek set yeniden çalıştırılır. Hangi hata düzeldi, hangi yeni hata oluştu ve hangi gider değişti birlikte incelenir. İnsan değerlendirmesi özellikle kritik örneklerde korunur. Bu sayfa gerçekleşmiş bir performans iddiası yerine tekrar kullanılabilir ölçüm yöntemini tanımlar."
+        }
+      ],
+      "sources": [
+        {
+          "label": "OpenAI — değerlendirme iş akışları",
+          "url": "https://developers.openai.com/api/docs/guides/evals"
+        },
+        {
+          "label": "n8n — Schedule Trigger",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger"
+        }
+      ],
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
     }
   ]
 }
