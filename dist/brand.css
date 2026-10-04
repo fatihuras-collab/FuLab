@@ -1,0 +1,7 @@
+/* Shared header wordmark: same FuLab branding on every route. */
+header .brand,header .ref-logo{display:inline-flex;align-items:center;flex-shrink:0}
+header .site-wordmark{display:inline-block;font-family:'Segoe UI',Arial,sans-serif;font-size:43px;font-weight:600;line-height:1;letter-spacing:-2px;color:#f1f5ff}
+header .site-wordmark>span{color:#229fff}
+header .site-wordmark>small{display:block;font-size:7px;font-weight:500;line-height:1;letter-spacing:.9px;color:#83ceff;margin-top:5px}
+@media(max-width:1200px){header .site-wordmark{font-size:38px}}
+@media(max-width:800px){header .site-wordmark{font-size:35px}header .site-wordmark>small{font-size:6px}}
