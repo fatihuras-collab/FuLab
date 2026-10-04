@@ -4,3 +4,11 @@
 .hero-dashboard{line-height:1.35}.dash-stats>div,.dash-charts>div{font-size:10px;line-height:1.35}.dash-stats small{line-height:1.5}.dash-person{line-height:1.35}.hero-benefits{position:relative;z-index:3}@media(min-width:801px) and (max-width:1200px){.hero{min-height:425px;padding-block:22px 28px}.hero-dashboard{min-height:365px}.team-map{grid-template-rows:155px 150px 150px}.workforce-section{padding-top:25px}.team-heading{margin-bottom:20px}.employee-head{margin-bottom:8px}.employee ul{line-height:1.45}.how{margin-top:9px}.hero-benefits{width:112%}.hero-benefits>span:last-child{padding-right:5px}}
 
 .plan-sharing{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.plan-sharing .btn{font-size:11px;flex:1;justify-content:center;white-space:nowrap}.summary-note a{text-decoration:underline;text-underline-offset:3px}
+/* Pointer-following tilt keeps each element's original layout and perspective. */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.motion-target{transform:var(--motion-base) perspective(900px) translate3d(var(--shift-x,0px),var(--shift-y,0px),0) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:transform .38s cubic-bezier(.2,.7,.2,1),border-color .25s,box-shadow .25s;transform-origin:center}
+.motion-target.motion-active{will-change:transform;transition:transform .12s ease-out,border-color .25s,box-shadow .25s}
+.employee.motion-target:hover{transform:var(--motion-base) perspective(900px) translate3d(var(--shift-x,0px),var(--shift-y,0px),0) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))}
+.employee.motion-target:after,.department.motion-target:after,.hero-dashboard.motion-target:after{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--light-x,50%) var(--light-y,50%),#45caff22,transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:4}
+.motion-active:after{opacity:1!important}
+}
