@@ -27,7 +27,8 @@ jobs:
           for a in d['articles']:
               for key in ('slug','title','description','category','author','updatedAt','summary','sections','sources','changeNote'): assert a[key], key
               assert all(s['url'].startswith('https://') for s in a['sources'])
-          assert Path('/tmp/rehber.html').read_text().count('class="research-card"') == 10
+          expected_cards = len({t['slug'] for t in d['topics']} | set(slugs))
+          assert Path('/tmp/rehber.html').read_text().count('class="research-card"') == expected_cards
           assert 'Kısa cevap' in Path('/tmp/article.html').read_text()
           assert 'Yayın ilkeleri' in Path('/tmp/policy.html').read_text()
           PYTEST
