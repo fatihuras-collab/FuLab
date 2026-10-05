@@ -561,7 +561,7 @@
           "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger.md"
         }
       ],
-      "changeNote": "İlk inceleme taslağı, 5 Ekim 2026. n8n ile e-posta ve CRM otomasyonu ana konusunun kesinti sonrası uzlaştırma alt sorusu; resmî ürün bilgisi ile FuLab tasarım önerileri ayrılmıştır. Saha ölçümü yok."
+      "changeNote": "İlk yayın, 5 Ekim 2026. n8n ile e-posta ve CRM otomasyonu ana konusunun kesinti sonrası uzlaştırma alt sorusu; resmî ürün bilgisi ile FuLab tasarım önerileri ayrılmıştır. Saha ölçümü yok."
     },
     {
       "slug": "gunluk-veri-kaydi-eksik-gun-tespiti",
@@ -607,7 +607,7 @@
           "url": "https://docs.n8n.io/deploy/host-n8n/configure-n8n/scaling/manage-execution-data.md"
         }
       ],
-      "changeNote": "İlk inceleme taslağı, 5 Ekim 2026. AI otomasyonunun başarısı nasıl ölçülür ana konusunun günlük veri bütünlüğü alt sorusu; resmî ürün bilgisi, önerilen tasarım ve varsayımsal test ayrı belirtilmiştir. Saha ölçümü yok."
+      "changeNote": "İlk yayın, 5 Ekim 2026. AI otomasyonunun başarısı nasıl ölçülür ana konusunun günlük veri bütünlüğü alt sorusu; resmî ürün bilgisi, önerilen tasarım ve varsayımsal test ayrı belirtilmiştir. Saha ölçümü yok."
     }
   ]
 }
