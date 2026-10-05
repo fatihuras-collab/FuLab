@@ -516,6 +516,98 @@
         }
       ],
       "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+    },
+    {
+      "slug": "crm-kesintisi-sonrasi-guvenli-yeniden-isleme",
+      "title": "CRM kesintisinden sonra talepler nasıl güvenle yeniden işlenir?",
+      "description": "E-posta ve CRM otomasyonunda kesinti sonrası belirsiz yazma sonucunu uzlaştırma, tekrar işleme kuyruğu ve kontrollü hata bildirimi.",
+      "category": "İş akışları",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-05",
+      "summary": "Kesintiden sonra bütün akışı baştan çalıştırmak ikinci CRM kaydı veya ikinci yanıt üretebilir. Önce hangi adımın gerçekten tamamlandığını doğrulayın; yalnızca eksik adımı, aynı işlem anahtarıyla yeniden ele alın.",
+      "sections": [
+        {
+          "heading": "Kesinti, kaydın oluşmadığı anlamına gelmez",
+          "text": "CRM kaydı oluşturulmuş, fakat yanıt bağlantı hatası nedeniyle otomasyona ulaşmamış olabilir. Bu durumda sonuç başarısız değil, belirsizdir. FuLab’ın önerdiği tasarımda her talep için kaynak kimliği ve işlem anahtarı saklanır. Yeniden yazmadan önce hedef CRM’de bu anahtarla kayıt aranır. Aynı e-postanın tekrar alınması ile aynı müşterinin yeni talebi birbirinden ayrılır."
+        },
+        {
+          "heading": "Önce uzlaştırma, sonra yeniden işleme",
+          "text": "İş günlüğünde talep alındı, CRM sonucu belirsiz, CRM doğrulandı, yanıt onaylandı ve yanıt gönderimi doğrulandı durumlarını ayrı tutun. CRM kaydı bulunursa kimliğini günlüğe bağlayıp sonraki eksik adıma geçin. Bulunamazsa kontrollü yeniden yazma değerlendirilir. Arama servisi de erişilemiyorsa ikinci kayıt oluşturmak yerine işi bekletin. CRM benzersiz alan veya idempotency desteği sunuyorsa ürünün kendi koşullarına göre kullanın; yalnızca ön kontrol eşzamanlı iki yazmayı engellemez. Böyle bir destek yoksa tek işleyici veya kilit ve uzlaştırma tasarımı ayrıca test edilmelidir."
+        },
+        {
+          "heading": "Hata bildiriminin resmî mekanizması",
+          "text": "n8n’de Error Trigger ile başlayan bir hata iş akışı, ana akışın ayarlarından ilişkilendirilebilir. Stop And Error, seçilen koşullarda yürütmeyi hata durumuna düşürmek için kullanılabilir. Hata bilgisindeki execution.id ve execution.url her durumda bulunmaz; tetikleyici hatalarında farklı veri yapısı gelebilir. Bildirim metni bu alanlar eksik olduğunda da anlaşılır kalmalıdır. Bunlar 5 Ekim 2026’da doğrulanan resmî ürün davranışlarıdır."
+        },
+        {
+          "heading": "Tekrar denemeyi görev türüne bağlayın",
+          "text": "FuLab önerisi: geçici bağlantı sorununu, yetki hatasını ve geçersiz alanı farklı kuyruklara ayırın. Yeniden deneme sayısı ve bekleme süresi, bağlı hizmetin kurallarıyla belirlenir; burada evrensel bir sayı önerilmiyor. Deneme sınırı dolduğunda talep, sorumlu kişi ve son durumuyla inceleme kuyruğunda kalır. E-posta gönderiminin sonucu belirsizse CRM kaydının doğrulanması ikinci mesaj göndermeye izin vermez. Gönderim hizmetinin kayıtları ayrıca uzlaştırılmalıdır."
+        },
+        {
+          "heading": "Manuel test yeterli değildir",
+          "text": "Resmî Error Trigger belgesine göre hata akışı elle çalıştırılan denemede tetiklenmez; otomatik yürütmede hata oluşması gerekir. Pilotun ayrı test ortamında otomatik bir tetikleyiciyle kontrollü hata üretin. CRM yazıldıktan sonra bağlantının kopması, aynı talebin iki kez gelmesi, eşzamanlı işlem ve bildirimin başarısız olması senaryolarını deneyin. Test sonrasında hedef CRM kaydı ve gönderim günlüğünü tekrar okuyun."
+        },
+        {
+          "heading": "Ne ölçülecek?",
+          "text": "Mükerrer kayıt, mükerrer gönderim, belirsiz kalan işlem, kurtarma süresi ve insan düzeltme süresini raporlayın. Kurtarılan talep, hedef kaydı ve gerekli gönderimi doğrulanmış taleptir; yalnızca iş akışının yeşil görünmesi yeterli değildir. Bu yazı önerilen bir mühendislik yöntemidir. FuLab müşterisinden ölçülmüş sonuç, tarife veya tasarruf yüzdesi sunmuyor."
+        }
+      ],
+      "sources": [
+        {
+          "label": "n8n — Handle errors gracefully",
+          "url": "https://docs.n8n.io/build/flow-logic/handle-errors-gracefully.md"
+        },
+        {
+          "label": "n8n — Error Trigger",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger.md"
+        }
+      ],
+      "changeNote": "İlk inceleme taslağı, 5 Ekim 2026. n8n ile e-posta ve CRM otomasyonu ana konusunun kesinti sonrası uzlaştırma alt sorusu; resmî ürün bilgisi ile FuLab tasarım önerileri ayrılmıştır. Saha ölçümü yok."
+    },
+    {
+      "slug": "gunluk-veri-kaydi-eksik-gun-tespiti",
+      "title": "Günlük veri kaydı durduğunda eksik günler nasıl anlaşılır?",
+      "description": "Günlük otomasyonda sıfır işlem ile veri alınamamasını ayıran çalışma defteri, bağımsız kontrol ve arşiv yöntemi.",
+      "category": "Araştırmalar",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-05",
+      "summary": "Boş günlük rapor, sıfır talep anlamına gelmeyebilir. Beklenen çalışma, veri kapsamı ve kalıcı kayda doğrulanmış yazma ayrı izlenirse eksik günler başarı gibi raporlanmaz.",
+      "sections": [
+        {
+          "heading": "İşlem yok ile veri yok farklıdır",
+          "text": "Bir gün hiç talep gelmemesi geçerli bir iş sonucu olabilir. Kaynağa ulaşılamaması, zamanlayıcının başlamaması veya kaydın yazılamaması ise veri eksikliğidir. FuLab’ın önerdiği günlük çalışma defterinde beklenen tarih aralığı, başlama zamanı, kaynak sorgusu sonucu, alınan kayıt sayısı ve doğrulanmış yazma sonucu bulunur. Sıfır kayıt ancak kaynak sorgusu başarıyla tamamlandıysa ve kapsam doğrulandıysa sıfır olarak raporlanır."
+        },
+        {
+          "heading": "Zamanlamayı açıkça tanımlayın",
+          "text": "n8n Schedule Trigger sabit zamanlarda akış başlatır; resmî belge akışın kaydedilip yayımlanmasını ve zaman diliminin kontrolünü ister. Önce iş akışının, bu yoksa n8n örneğinin zaman dilimi kullanılır. FuLab önerisi, işletme günü için Europe/Istanbul sınırlarını açıkça tanımlamak ve olay zamanını sisteme alınma zamanından ayrı tutmaktır. Haftalık içerik yayını ile günlük veri toplama iki ayrı süreç olarak izlenmelidir."
+        },
+        {
+          "heading": "Kalıcı yazmayı tekrar okuyun",
+          "text": "Kaynak sorgusu başarılı olsa bile hedef tabloya yazma başarısız olabilir. Günlük kaydı tamamlandı olarak kapatmadan önce hedefte çalışma kimliğini ve kaydedilen satır sayısını tekrar okuyun. Aynı gün yeniden işlendiğinde mükerrer satır üretmemek için kaynak kayıt kimliği ve dönem bazlı kurallar kullanın. Sonradan gelen kayıtları yalnızca bugünün verisi gibi göstermeyin; ait oldukları döneme bağlayıp revizyon zamanı ekleyin. Kısmi veri, tamamlanmış günle aynı statüyü taşımamalıdır."
+        },
+        {
+          "heading": "Hiç başlamayan işi kim fark edecek?",
+          "text": "Aynı akışın sonuna eklenen bildirim, akış hiç başlamadığında çalışamaz. FuLab’ın önerdiği bağımsız kontrol, beklenen tamamlanma saatinden sonra çalışma defterini inceler. Günlük kayıt yoksa, sürüyorsa veya kısmi kaldıysa sorumlu kişiye durumu gösterir. Ana akışla aynı sunucudaki kontrol de sunucu kesintisinde durabilir; bu yüzden ayrı izleme noktası tasarımı değerlendirilmelidir. Alarm teslimi ve sorumlunun işi ele alması ayrıca kaydedilir. Bu öneri mevcut FuLab sisteminde böyle bir izlemenin kurulu olduğu iddiası değildir."
+        },
+        {
+          "heading": "Çalıştırma geçmişi iş arşivi değildir",
+          "text": "n8n resmî belgesi, tamamlanmış yürütmelerin verileri ve ikili dosyalarıyla birlikte dönemsel temizlenebildiğini; temizliğin varsayılan olarak açık olduğunu belirtir. Yaş veya kayıt sayısı eşiği geçmişi azaltabilir. Bu nedenle uzun dönem araştırma verisini yalnızca yürütme ekranına bağlamayın. FuLab önerisi, gerekli iş verisini ve günlük toplamları ayrı kalıcı depoda tutmak; saklama süresini, erişimi ve yedeği bu depoda tanımlamaktır. Yürütme geçmişini temizlemek günlük veri toplamayı durdurmakla aynı işlem değildir."
+        },
+        {
+          "heading": "Açık varsayımlı kabul testi",
+          "text": "Örnek testte tek bir kaynak, tek bir günlük dönem ve kontrollü test kayıtları varsayılır; bu bir saha ölçümü değildir. Normal gün, gerçek sıfır gün, kaynak kesintisi, hedef yazma hatası, hiç başlamayan akış ve geç gelen veri denenir. Kabul koşulu: her dönem doğru durumla görünmeli, eksik dönem sıfır başarı diye raporlanmamalı ve yeniden işlem mükerrer kayıt üretmemelidir. Daha sonra kapsamı doğrulanan gün oranı, eksik gün sayısı, eksikliğin fark edilme süresi ve kurtarma süresi gerçek günlüklerden ölçülür. Bu yazıda ücret tarifesi veya gerçekleşmiş performans sonucu yoktur."
+        }
+      ],
+      "sources": [
+        {
+          "label": "n8n — Schedule Trigger",
+          "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger"
+        },
+        {
+          "label": "n8n — Manage execution data",
+          "url": "https://docs.n8n.io/deploy/host-n8n/configure-n8n/scaling/manage-execution-data.md"
+        }
+      ],
+      "changeNote": "İlk inceleme taslağı, 5 Ekim 2026. AI otomasyonunun başarısı nasıl ölçülür ana konusunun günlük veri bütünlüğü alt sorusu; resmî ürün bilgisi, önerilen tasarım ve varsayımsal test ayrı belirtilmiştir. Saha ölçümü yok."
     }
   ]
 }
