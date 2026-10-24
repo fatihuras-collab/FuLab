@@ -608,6 +608,60 @@
         }
       ],
       "changeNote": "İlk yayın, 5 Ekim 2026. AI otomasyonunun başarısı nasıl ölçülür ana konusunun günlük veri bütünlüğü alt sorusu; resmî ürün bilgisi, önerilen tasarım ve varsayımsal test ayrı belirtilmiştir. Saha ölçümü yok."
+    },
+    {
+      "slug": "depo-stok-takibi-otomasyonu",
+      "title": "Depo ve stok takibi otomasyonu: güvenilir pilot nasıl kurulur?",
+      "description": "Mal kabulü, raf hareketi, sayım ve stok uyarılarını izlenebilir bir otomasyon pilotuna dönüştürmek için uygulama rehberi.",
+      "category": "İş akışları",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-24",
+      "summary": "Stok otomasyonunun temeli doğru ürün ve konum kayıtları ile her mal hareketinin iz bırakmasıdır. Önce tek bir depo alanında giriş, transfer, çıkış ve sayım farklarını düzenli kaydedin; eşik uyarılarını ve satın alma taslaklarını insan onayına bağlayın.",
+      "sections": [
+        {
+          "heading": "Önce ürün ve konum kayıtlarını düzenleyin",
+          "text": "Her stok kalemi için tekil bir işletme kodu, açıklama, ölçü birimi ve gerekiyorsa varyant bilgisi belirleyin. Depo, raf ve toplama alanları da ayrı konum kodlarıyla tanımlansın. Barkod kullanılacaksa mevcut ürün etiketini işletme koduyla eşleştirin; barkod her durumda stok miktarını taşımaz, çoğu zaman ürün kimliğini okutulabilir biçimde temsil eder. GS1 barkodları ürün, sevkiyat ve konum gibi anahtarları ve bazı nitelikleri makineyle okunur biçimde kodlayabilir. Önceki Excel veya ERP kayıtlarındaki mükerrer kodları pilot öncesi temizleyin."
+        },
+        {
+          "heading": "Stok bakiyesini hareket kayıtlarından üretin",
+          "text": "Mal kabulü, depolar arası transfer, satış veya sarf çıkışı, iade ve sayım düzeltmesini ayrı hareket türleri olarak kaydedin. Her satırda ürün, miktar, kaynak ve hedef konum, belge veya sipariş bağlantısı, işlemi yapan kişi ve zaman bilgisi bulunsun. Bir hareketin miktarı sonradan değiştirilecekse eski kaydı sessizce silmek yerine gerekçe ve onay içeren düzeltme hareketi oluşturun. Böylece mevcut bakiye hangi işlemlerden oluştuğu izlenebilir bir kayıt olur."
+        },
+        {
+          "heading": "Uyarıyı sipariş kararıyla karıştırmayın",
+          "text": "Kritik stok ve yeniden sipariş eşiklerini ürün bazında belirleyin. Başlangıç hesabı olarak tedarik süresi boyunca beklenen tüketim ile işletmenin belirlediği güvenlik stoğu birlikte değerlendirilebilir; talep oynaklığı, tedarikçi takvimi ve minimum sipariş miktarı ayrıca dikkate alınmalıdır. Eşik aşıldığında otomasyon sorumluya ürün, mevcut miktar, açık sipariş ve önerilen sonraki adımı içeren bir uyarı veya satın alma taslağı hazırlasın. Tedarikçiye sipariş gönderme, miktar düzeltme ve stok kapatma gibi mali etkili adımları yetkili çalışan onaylasın."
+        },
+        {
+          "heading": "Döngüsel sayım ve fark yönetimi kurun",
+          "text": "Tüm depoyu aynı anda saymak yerine ürünleri hareket sıklığına, değerine veya operasyonel önemine göre sınıflandırıp farklı aralıklarla sayabilirsiniz. Microsoft’un envanter belgeleri, döngüsel sayımı belirli kalemlerin düzenli aralıklarla kontrol edilmesi yöntemi olarak anlatır. Sayım sonucu sistem bakiyesiyle uyuşmadığında fark otomatik olarak kayda geçsin, ancak onaylı düzeltme olmadan stok bakiyesi değişmesin. Yanlış konum, yanlış ölçü birimi, hasarlı ürün ve henüz işlenmemiş hareket gibi olası nedenler inceleme kuyruğuna eklenebilir."
+        },
+        {
+          "heading": "AI hangi adımlarda yardımcı olabilir?",
+          "text": "AI; irsaliye veya fatura satırlarından ürün adlarını eşleştirmek, açıklamaları sınıflandırmak, tekrar eden belgeyi fark etmek ve günlük istisnaları özetlemek için yardımcı olabilir. Eşleşme güveni düşükse kaydı otomatik işlemek yerine çalışan incelemesine yönlendirin. AI tarafından çıkarılan miktar, ürün kodu veya tedarikçi bilgisi kaynak belgeyle doğrulanmadan kesin stok hareketi sayılmamalıdır. Bu rehber önerilen tasarımı anlatır; FuLab’da belirli bir işletmede kurulmuş veya ölçülmüş bir depo sistemi olduğunu ileri sürmez."
+        },
+        {
+          "heading": "Küçük ve ölçülebilir bir pilot seçin",
+          "text": "Önce tek bir depo alanı, sınırlı ürün grubu ve bir sorumlu ekip seçin. Normal mal kabulü ve çıkışın yanında yinelenen barkod okutma, kısmi teslimat, yanlış raf, iade, sayım farkı ve bağlantı kesintisini deneyin. Başlamadan önce stok doğruluğu, yanlış ürün/konum eşleşmesi, mükerrer hareket, uyarıdan çalışan aksiyonuna kadar geçen süre ve manuel düzeltme süresini tanımlayın. İlk ve son değerleri aynı yöntemle ölçün; örneklem, dönem ve kapsamı raporda belirtin. Bu test senaryoları FuLab’ın önerisidir, ölçülmüş müşteri sonucu değildir."
+        },
+        {
+          "heading": "Kesinti ve tekrar işleme durumunu tasarlayın",
+          "text": "Depo cihazı veya entegrasyon aynı olayı yeniden gönderirse ikinci bir stok hareketi oluşmaması için kaynak hareket kimliği kullanın. Kayıt sonucu belirsiz kaldığında yeni hareket yazmadan önce hedef sistemde önceki işlemi arayın. Barkod okutmasının alınması, stok kaydının yazılması ve sorumluya giden uyarının teslim edilmesi ayrı durumlar olarak izlenmelidir. Bağlantı düzeldiğinde bekleyen kayıtlar uzlaştırılsın; hata kuyruğunda kalan işin sorumlusu ve son durumu görünür olsun."
+        }
+      ],
+      "sources": [
+        {
+          "label": "GS1 — Barcodes",
+          "url": "https://www.gs1.org/standards/barcodes"
+        },
+        {
+          "label": "Microsoft Learn — Define cycle counting",
+          "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/tasks/define-cycle-counting"
+        },
+        {
+          "label": "Microsoft Learn — Maintain inventory levels",
+          "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/inventory-to-deliver-maintain-inventory-levels-overview"
+        }
+      ],
+      "changeNote": "İlk yayın taslağı, 24 Ekim 2026. Resmî kaynaklardaki ürün bilgileri ile FuLab’ın önerdiği pilot yaklaşımı ayrılmıştır. Sahada ölçülmüş sonuç veya fiyat iddiası yoktur."
     }
   ]
 }
