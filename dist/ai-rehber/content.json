@@ -608,6 +608,60 @@
         }
       ],
       "changeNote": "İlk yayın, 5 Ekim 2026. AI otomasyonunun başarısı nasıl ölçülür ana konusunun günlük veri bütünlüğü alt sorusu; resmî ürün bilgisi, önerilen tasarım ve varsayımsal test ayrı belirtilmiştir. Saha ölçümü yok."
+    },
+    {
+      "slug": "kisisel-ai-asistani-guvenli-is-akisi",
+      "title": "Kişisel AI asistanı nasıl güvenli ve faydalı kurulur?",
+      "description": "E-posta, takvim ve görevleri destekleyen kişisel asistan için kapsam, erişim, onay ve pilot ölçümü rehberi.",
+      "category": "İş akışları",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-10-31",
+      "summary": "Kişisel AI asistanı, önce bilgiyi bulup özetleyen ve yapılacakları taslaklayan dar görevlerle başlamalıdır. E-posta gönderme, takvimde değişiklik yapma veya başka bir kişi adına işlem yürütme gibi yazma adımları sınırlı yetki ve kullanıcı onayıyla tasarlanmalıdır.",
+      "sections": [
+        {
+          "heading": "Asistana net görev verin",
+          "text": "Önce hangi işi kolaylaştıracağını belirleyin: gelen e-postalardan yapılacakları çıkarmak, günlük ajandayı özetlemek, toplantı için hazırlık notu oluşturmak veya takip hatırlatması hazırlamak gibi. Her görev için kullanılacak veri kaynağını, beklenen çıktıyı ve görevin ne zaman tamamlanmış sayılacağını yazın. İlk pilotu tek bir iş ve tek bir kullanıcıyla başlatın. Asistanın her hesaba ve her dosyaya erişmesi gerekmez."
+        },
+        {
+          "heading": "Erişimi en düşük gerekli düzeyde tutun",
+          "text": "Bir uygulamanın e-posta veya takvim verisine erişmesi için ilgili hesabın yetki vermesi gerekir. Microsoft Graph, kullanıcının oturumu adına çalışan delegated erişim ile imzalı kullanıcı olmadan çalışan application erişimini birbirinden ayırır; uygulama izinleri daha geniş kapsamlı olabilir. FuLab’ın önerisi, ihtiyaç karşılanıyorsa kullanıcı adına ve yalnızca gerekli kaynaklara erişimle başlamaktır. Önce okuma ve taslak oluşturma gibi adımları deneyin; yazma yetkisini yalnızca açıkça gerekli işlev için ekleyin. Ürün ve sağlayıcıya göre izin adları değişebileceği için gerçek kurulumda kullanılan API’nin resmi izin belgesini kontrol edin."
+        },
+        {
+          "heading": "Taslak ile dış dünyada yapılan işlemi ayırın",
+          "text": "Asistanın e-posta taslağı hazırlaması, bu e-postayı gönderme yetkisi olduğu anlamına gelmemelidir. Takvim önerisi, etkinliği oluşturma veya daveti gönderme işlemiyle aynı adım değildir. FuLab’ın başlangıç tasarımında asistan öneriyi ve dayandığı bilgiyi gösterir; kullanıcı alıcıyı, metni, tarihi ve saati gözden geçirip onayladığında işlem gerçekleşir. Onay ekranında yalnızca 'devam et' değil, yapılacak değişikliğin özeti görünmelidir."
+        },
+        {
+          "heading": "Belirsizliği ve hassas adımları kullanıcıya aktarın",
+          "text": "Saat dilimi, kişi adı, toplantı tarihi veya e-posta amacı belirsizse asistan tahmin ederek işlem yapmamalı; açıklama istemeli ya da işi kullanıcıya bırakmalıdır. Birbiriyle çelişen takvim kayıtları, yüksek önem taşıyan yazışmalar ve finansal veya hukuki sonuç doğurabilecek işlemler için ayrı onay kuralları belirleyin. OWASP, LLM tabanlı uygulamalarda gereğinden fazla işlev, izin veya özerkliğin zararlı işlemlere yol açabileceği 'Excessive Agency' riskini tanımlar. Bu kaynak bir güvenlik garantisi değil, tasarım riskini değerlendirme çerçevesidir."
+        },
+        {
+          "heading": "Kişisel veriyi ve işlem geçmişini sınırlayın",
+          "text": "Asistanın işini yapmak için gerekmeyen e-posta içeriğini, ekleri veya kişisel notları akışa taşımayın. Erişimi olan kullanıcıları, saklanan kayıtları ve saklama süresini belirleyin. Sorun araştırmak için işlem kimliği, zaman, kullanılan iş akışı sürümü ve onay durumu gibi sınırlı kayıtlar yararlı olabilir; mesajın tamamını günlüklerde saklamak çoğu zaman gerekli değildir. Sağlayıcının veri saklama ve erişim koşullarını, işletmenin politikalarıyla birlikte değerlendirin. NIST'in üretken yapay zekâ risk yönetimi profili, insan gözetimi ve kullanım bağlamına göre risk değerlendirmesini ele alır."
+        },
+        {
+          "heading": "Pilot başlamadan önce testleri belirleyin",
+          "text": "Normal bir iş gününü, çakışan toplantıları, eksik tarihli mesajı, benzer isimli kişileri, yinelenen e-postayı, yanlış alıcıyı ve bağlantı kesintisini kapsayan test örnekleri hazırlayın. Gerçek kişisel yazışmalar yerine anonimleştirilmiş veya kurgu veriler kullanabilirsiniz. Başarı ölçütlerini başlamadan seçin: doğru görev çıkarımı, yanlış alıcı veya tarih oranı, kullanıcı düzeltme süresi, onaysız işlem sayısı ve tamamlanan görev oranı gibi. Bu ölçütler örnek değerlendirme önerileridir; bu yazıda FuLab müşterilerinden alınmış bir performans sonucu sunulmuyor."
+        },
+        {
+          "heading": "İşlem sonrası doğrulama ve geri alma yolu kurun",
+          "text": "Asistan onay aldıktan sonra e-posta sağlayıcısının gönderim sonucunu veya takvimde oluşan kaydı kontrol etmelidir. 'İşlem istendi', 'sağlayıcı kabul etti' ve 'kayıt doğrulandı' durumlarını birbirine karıştırmayın. Aynı görevin tekrar çalışması ikinci bir e-posta veya takvim olayı oluşturmamalı; mümkünse kaynak mesaj veya görev kimliğini kullanarak tekrarları tanıyın. Yanlış değişiklikleri geri alma veya düzeltme adımını, pilotta test edin. NIST ve OWASP kaynaklarıyla birlikte bu öneriler bir mimari taslak sunar; hazır bir entegrasyonun kurulu olduğunu iddia etmez."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Microsoft Learn — Microsoft Graph izinlerine genel bakış",
+          "url": "https://learn.microsoft.com/en-us/graph/permissions-overview"
+        },
+        {
+          "label": "OWASP GenAI Security Project — LLM06:2025 Excessive Agency",
+          "url": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/?lang=us"
+        },
+        {
+          "label": "NIST — Generative Artificial Intelligence Profile (AI RMF)",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+        }
+      ],
+      "changeNote": "İlk yayın taslağı, 31 Ekim 2026. Resmî kaynaklardaki teknik bilgiler ile FuLab’ın tasarım önerileri ayrılmıştır. Gerçek müşteri ölçümü veya belirli bir uygulama entegrasyonu iddiası içermez."
     }
   ]
 }
