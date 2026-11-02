@@ -145,15 +145,19 @@
           "url": "https://developers.openai.com/api/docs/models"
         },
         {
-          "label": "OpenAI — değerlendirme rehberi",
-          "url": "https://developers.openai.com/api/docs/guides/evals"
-        },
-        {
           "label": "Google Search Central — yapay zekâ ile üretilen içerik",
           "url": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content"
+        },
+        {
+          "label": "OpenAI — Evaluation best practices",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+        },
+        {
+          "label": "OpenAI — Evals platform deprecation timeline",
+          "url": "https://developers.openai.com/api/docs/deprecations"
         }
       ],
-      "changeNote": "2 Kasım 2026 kaynak güncellemesi: OpenAI API fiyat sayfasındaki Standard kısa bağlam model fiyatları, işlem katmanları/önbellek/bölgesel işleme ayrımları ve araç ücretleri eklendi. USD/1M token referansıdır; TL teklifi veya müşteri ölçümü değildir."
+      "changeNote": "2 Kasım 2026 kaynak güncellemesi: OpenAI API fiyat sayfasındaki Standard kısa bağlam model fiyatları, işlem katmanları/önbellek/bölgesel işleme ayrımları ve araç ücretleri eklendi. USD/1M token referansıdır; TL teklifi veya müşteri ölçümü değildir. 2 Kasım 2026: OpenAI Evals platformunun 31 Ekim 2026'da salt okunur duruma geçtiği ve 30 Kasım 2026'da kapanmasının planlandığı bilgisi dikkate alınarak güncel Evaluation best practices ve deprecation kaynaklarına geçildi; mevcut yöntemsel değerlendirme önerileri API erişiminin devam ettiği varsayımına dayanmıyor."
     },
     {
       "slug": "n8n-eposta-crm",
@@ -191,11 +195,15 @@
           "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.emailimap"
         },
         {
-          "label": "OpenAI — değerlendirme iş akışları",
-          "url": "https://developers.openai.com/api/docs/guides/evals"
+          "label": "OpenAI — Evaluation best practices",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+        },
+        {
+          "label": "OpenAI — Evals platform deprecation timeline",
+          "url": "https://developers.openai.com/api/docs/deprecations"
         }
       ],
-      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir. 2 Kasım 2026: OpenAI Evals platformunun 31 Ekim 2026'da salt okunur duruma geçtiği ve 30 Kasım 2026'da kapanmasının planlandığı bilgisi dikkate alınarak güncel Evaluation best practices ve deprecation kaynaklarına geçildi; mevcut yöntemsel değerlendirme önerileri API erişiminin devam ettiği varsayımına dayanmıyor."
     },
     {
       "slug": "whatsapp-ai-asistani-maliyeti",
@@ -329,19 +337,23 @@
       ],
       "sources": [
         {
-          "label": "OpenAI — değerlendirme iş akışları",
-          "url": "https://developers.openai.com/api/docs/guides/evals"
-        },
-        {
           "label": "Mikro API — Verilen Teklif endpointleri",
           "url": "https://apidocs.mikro.com.tr/apis/verilen-teklif"
         },
         {
           "label": "Mikro API — sürüm güncellemeleri (17.08a, 12.10.2026)",
           "url": "https://apidocs.mikro.com.tr/changelog"
+        },
+        {
+          "label": "OpenAI — Evaluation best practices",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+        },
+        {
+          "label": "OpenAI — Evals platform deprecation timeline",
+          "url": "https://developers.openai.com/api/docs/deprecations"
         }
       ],
-      "changeNote": "2 Kasım 2026 teknik güncellemesi: Mikro API'nin Verilen Teklif endpointleri ve 12 Ekim 2026 tarihli 17.08a sürüm notları eklendi. ERP yazımı insan onayı, test firma ve readback şartı olarak ayrıldı; ölçülmüş süre veya müşteri sonucu eklenmedi."
+      "changeNote": "2 Kasım 2026 teknik güncellemesi: Mikro API'nin Verilen Teklif endpointleri ve 12 Ekim 2026 tarihli 17.08a sürüm notları eklendi. ERP yazımı insan onayı, test firma ve readback şartı olarak ayrıldı; ölçülmüş süre veya müşteri sonucu eklenmedi. 2 Kasım 2026: OpenAI Evals platformunun 31 Ekim 2026'da salt okunur duruma geçtiği ve 30 Kasım 2026'da kapanmasının planlandığı bilgisi dikkate alınarak güncel Evaluation best practices ve deprecation kaynaklarına geçildi; mevcut yöntemsel değerlendirme önerileri API erişiminin devam ettiği varsayımına dayanmıyor."
     },
     {
       "slug": "logo-mikro-belge-isleme",
@@ -425,11 +437,15 @@
           "url": "https://docs.ollama.com/api/introduction"
         },
         {
-          "label": "OpenAI — değerlendirme iş akışları",
-          "url": "https://developers.openai.com/api/docs/guides/evals"
+          "label": "OpenAI — Evaluation best practices",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+        },
+        {
+          "label": "OpenAI — Evals platform deprecation timeline",
+          "url": "https://developers.openai.com/api/docs/deprecations"
         }
       ],
-      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir. 2 Kasım 2026: OpenAI Evals platformunun 31 Ekim 2026'da salt okunur duruma geçtiği ve 30 Kasım 2026'da kapanmasının planlandığı bilgisi dikkate alınarak güncel Evaluation best practices ve deprecation kaynaklarına geçildi; mevcut yöntemsel değerlendirme önerileri API erişiminin devam ettiği varsayımına dayanmıyor."
     },
     {
       "slug": "anaokulu-operasyon-otomasyonu",
@@ -467,11 +483,15 @@
           "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger"
         },
         {
-          "label": "OpenAI — değerlendirme iş akışları",
-          "url": "https://developers.openai.com/api/docs/guides/evals"
+          "label": "OpenAI — Evaluation best practices",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+        },
+        {
+          "label": "OpenAI — Evals platform deprecation timeline",
+          "url": "https://developers.openai.com/api/docs/deprecations"
         }
       ],
-      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir. 2 Kasım 2026: OpenAI Evals platformunun 31 Ekim 2026'da salt okunur duruma geçtiği ve 30 Kasım 2026'da kapanmasının planlandığı bilgisi dikkate alınarak güncel Evaluation best practices ve deprecation kaynaklarına geçildi; mevcut yöntemsel değerlendirme önerileri API erişiminin devam ettiği varsayımına dayanmıyor."
     },
     {
       "slug": "lojistik-belge-otomasyonu",
@@ -542,20 +562,24 @@
         },
         {
           "heading": "Değişikliklerden sonra aynı test",
-          "text": "OpenAI’ın değerlendirme rehberi, belirlenmiş örneklerle model çıktısının sistematik değerlendirilmesini ele alır. FuLab uygulamasında model, istem veya entegrasyon değiştiğinde saklanan örnek set yeniden çalıştırılır. Hangi hata düzeldi, hangi yeni hata oluştu ve hangi gider değişti birlikte incelenir. İnsan değerlendirmesi özellikle kritik örneklerde korunur. Bu sayfa gerçekleşmiş bir performans iddiası yerine tekrar kullanılabilir ölçüm yöntemini tanımlar."
+          "text": "OpenAI'ın güncel Evaluation best practices rehberi, uygulama davranışını göreve özel örnekler ve insan değerlendirmesiyle düzenli ölçmeyi önerir. Önemli ürün notu: OpenAI Evals platformu 31 Ekim 2026 itibarıyla mevcut kullanıcılar için salt okunur duruma geçmiştir ve dashboard/API'nin 30 Kasım 2026'da kapatılması planlanmaktadır. Yeni bir iş akışı tasarlarken Evals API'nin süresiz kullanılabilir olduğunu varsaymayın; güncel Datasets ve alternatif değerlendirme araçlarını inceleyin. FuLab uygulamasında model, istem veya entegrasyon değiştiğinde saklanan örnek set yeniden çalıştırılır. Hangi hata düzeldi, hangi yeni hata oluştu ve hangi gider değişti birlikte incelenir. Bu sayfa gerçekleşmiş bir performans iddiası yerine tekrar kullanılabilir ölçüm yöntemini tanımlar."
         }
       ],
       "sources": [
         {
-          "label": "OpenAI — değerlendirme iş akışları",
-          "url": "https://developers.openai.com/api/docs/guides/evals"
-        },
-        {
           "label": "n8n — Schedule Trigger",
           "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.scheduletrigger"
+        },
+        {
+          "label": "OpenAI — Evaluation best practices",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+        },
+        {
+          "label": "OpenAI — Evals platform deprecation timeline",
+          "url": "https://developers.openai.com/api/docs/deprecations"
         }
       ],
-      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir. 2 Kasım 2026: OpenAI Evals platformunun 31 Ekim 2026'da salt okunur duruma geçtiği ve 30 Kasım 2026'da kapanmasının planlandığı bilgisi dikkate alınarak güncel Evaluation best practices ve deprecation kaynaklarına geçildi; mevcut yöntemsel değerlendirme önerileri API erişiminin devam ettiği varsayımına dayanmıyor."
     },
     {
       "slug": "crm-kesintisi-sonrasi-guvenli-yeniden-isleme",
