@@ -98,7 +98,7 @@
       "description": "İşletmeler için AI otomasyonunun API, sunucu, mesajlaşma ve bakım giderlerini ölçme yöntemi ve açık varsayımlı hesaplama örneği.",
       "category": "Maliyet",
       "status": "published",
-      "updatedAt": "2026-10-03",
+      "updatedAt": "2026-11-02",
       "author": "FuLab Araştırmalar",
       "summary": "Aylık maliyet, yalnızca yapay zekâ API ücretinden oluşmaz. Sunucu, mesajlaşma, entegrasyon, insan kontrolü ve bakım aynı hesapta değerlendirilmelidir. Bu ilk sürüm bir hesaplama yöntemidir; Türkiye geneli ölçülmüş bir fiyat endeksi değildir.",
       "sections": [
@@ -125,9 +125,25 @@
         {
           "heading": "Endeks ne zaman veri sunacak?",
           "text": "Bu sayfanın ilk sürümü ölçüm protokolünü tanımlar. Gerçek pilotlardan veri toplandığında, kullanılan hizmetlerin tarihli resmi fiyatlarıyla birlikte karşılaştırma tabloları eklenebilir. Sonraki sürümlerde varsayım, resmi tarife ve gerçek ölçüm birbirinden ayrı gösterilecektir. Bir hizmetin fiyatı doğrulanamazsa sayı uydurulmaz; veri eksik olarak işaretlenir."
+        },
+        {
+          "heading": "2 Kasım 2026 API model fiyatları: kısa bağlam",
+          "text": "OpenAI'nin resmî API fiyat sayfasında Standard kısa bağlam için 1 milyon token başına listelenen giriş/çıkış referansları: GPT-6 Astra 10/50 USD, GPT-6.1 Sol 2/10 USD, GPT-6.1 Terra 1/5 USD ve GPT-6 Luna 0,10/0,50 USD'dir. Bu değerler yalnızca belirtilen Standard kısa bağlam satırına aittir; uzun bağlam, Batch/Flex/Fast, önbellekli giriş ve önbellek yazma ayrı fiyatlandırılır. Bölgesel veri işleme ve FedRAMP gibi seçenekler ek ücret doğurabilir. Fiyatlar USD/1 milyon token bazındadır; TL karşılığı, vergi, barındırma ve insan kontrolü dahil değildir."
+        },
+        {
+          "heading": "Araç ücretlerini model tokenlarından ayırın",
+          "text": "OpenAI fiyat sayfası, Responses API ve Chat Completions gibi uç noktaların ayrıca bir endpoint ücreti olmadığını; kullanılan model tokenlarının ücretlendirildiğini açıklar. Web search, file search, container ve diğer araçlar için ayrı ücret kalemleri bulunabilir. Hesapta model tokenı, araç kullanımı, barındırma ve operasyon giderini ayrı satırlarda tutun. Fiyat sayfasını teklif günü yeniden kontrol edin; bu bölüm sabit fiyat garantisi değildir."
         }
       ],
       "sources": [
+        {
+          "label": "OpenAI — API fiyatlandırması (2 Kasım 2026 kontrolü)",
+          "url": "https://developers.openai.com/api/docs/pricing"
+        },
+        {
+          "label": "OpenAI — model kataloğu",
+          "url": "https://developers.openai.com/api/docs/models"
+        },
         {
           "label": "OpenAI — değerlendirme rehberi",
           "url": "https://developers.openai.com/api/docs/guides/evals"
@@ -137,7 +153,7 @@
           "url": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content"
         }
       ],
-      "changeNote": "İlk sürüm: hesaplama yöntemi ve açıkça varsayımsal süre örneği. Ölçülmüş fiyat verisi henüz yok."
+      "changeNote": "2 Kasım 2026 kaynak güncellemesi: OpenAI API fiyat sayfasındaki Standard kısa bağlam model fiyatları, işlem katmanları/önbellek/bölgesel işleme ayrımları ve araç ücretleri eklendi. USD/1M token referansıdır; TL teklifi veya müşteri ölçümü değildir."
     },
     {
       "slug": "n8n-eposta-crm",
@@ -187,8 +203,8 @@
       "description": "WhatsApp AI asistanı için mesaj, model, sağlayıcı ve insan kontrol giderlerini birlikte hesaplama rehberi.",
       "category": "Maliyet",
       "author": "FuLab Araştırmalar",
-      "updatedAt": "2026-10-03",
-      "summary": "Toplam gideri mesaj bedeliyle sınırlamayın. Meta tarifesi, kullandığınız sağlayıcının ücretleri, model kullanımı, barındırma ve operatöre aktarım birlikte hesaplanmalıdır.",
+      "updatedAt": "2026-11-02",
+      "summary": "Toplam gider; Meta mesaj tarifesi, sağlayıcı ek ücretleri, model kullanımı, barındırma ve insan kontrolünden oluşur. Meta'nın resmî SSS'si 1 Ekim 2026'dan itibaren hizmet mesajlarında numara başına aylık ilk 1.000 ücretsiz mesajı, sonrasında ücretlendirmeyi belirtir; teklif öncesi güncel pazar/kategori tarifesi doğrulanmalıdır.",
       "sections": [
         {
           "heading": "Maliyet kalemlerini ayırın",
@@ -196,11 +212,11 @@
         },
         {
           "heading": "Tarife hangi verilere bağlı?",
-          "text": "WhatsApp’ın resmi fiyatlandırma sayfası teslim edilen mesajlar, alıcının pazarı ve mesaj kategorisi üzerinden ücret yapısını açıklar. Bütçeye alınacak kategori ve istisnalar için yürürlükteki resmi tarife ile sağlayıcı sözleşmesini birlikte kontrol edin. Mesaj kategorilerini tek bir ortalama bedelde birleştirmek yerine ayrı satırlar kullanın. Bu rehber belirli bir Türkiye birim fiyatı veya ücretsiz kullanım kotası ilan etmez; tarife değiştiğinde hesap güncellenmelidir."
+          "text": "Meta'nın resmî SSS'si, 1 Temmuz 2025'ten beri platform mesajlarının teslim edilen mesaj başına ücretlendirildiğini; pazara ve kategoriye göre farklı tarife uygulandığını belirtir. Aynı SSS'ye göre 1 Ekim 2026'dan itibaren hizmet mesajları da mesaj başına ücretlendirilir: her işletme telefon numarası için ayda ilk 1.000 hizmet mesajı ücretsizdir, 1.001'inci mesajdan itibaren yayımlanan tarife uygulanır. Gerçek teklif öncesinde işletme hesabındaki güncel Türkiye rate card'ı ve kullanılan sağlayıcının ek ücretleri kontrol edilmelidir. Bu yazı doğrulanmamış sabit bir TL birim fiyatı vermez."
         },
         {
           "heading": "Hesaplama şablonu",
-          "text": "Aylık toplam = mesaj gideri + model gideri + sağlayıcı aboneliği + barındırma + bakım + insan kontrolü. Mesaj giderinde her ücretli türün teslim sayısını ilgili birim fiyatla çarpın. Model giderinde giriş, çıkış ve varsa ek araç kullanımını sağlayıcı raporundan alın. Bir müşteri talebi birden fazla mesaj ve model çağrısı doğurabilir; talep sayısını doğrudan mesaj sayısı olarak kullanmayın. Tekrar denemelerin kullanımını da hesaba katın."
+          "text": "Aylık toplam = Meta mesaj gideri + model gideri + sağlayıcı aboneliği + barındırma + bakım + insan kontrolü. Mesaj giderini teslim edilen mesaj adedi, alıcı pazarı ve kategori bazında hesaplayın. Hizmet mesajlarında her işletme telefon numarası için aylık ilk 1.000 ücretsiz mesaj eşiğini ve 1.001'inci mesajdan sonraki geçerli rate card ücretini ayrı gösterin. Model giderinde giriş, çıkış, önbellek ve varsa araç kullanımını sağlayıcı raporundan alın. İş ortağı ücretlerini Meta tarifesine dahilmiş gibi göstermeyin."
         },
         {
           "heading": "Asistanın görev sınırı",
@@ -213,15 +229,19 @@
       ],
       "sources": [
         {
+          "label": "WhatsApp — Business Platform resmî fiyatlandırma SSS (1 Ekim 2026 hizmet mesajı kuralı)",
+          "url": "https://whatsappbusiness.com/resources/faq/"
+        },
+        {
           "label": "WhatsApp — Business Platform fiyatlandırması",
           "url": "https://whatsappbusiness.com/products/platform-pricing/"
         },
         {
-          "label": "OpenAI — değerlendirme iş akışları",
-          "url": "https://developers.openai.com/api/docs/guides/evals"
+          "label": "OpenAI — API fiyatlandırması",
+          "url": "https://developers.openai.com/api/docs/pricing"
         }
       ],
-      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+      "changeNote": "2 Kasım 2026 kaynak güncellemesi: Meta resmî SSS'sindeki 1 Ekim 2026 hizmet mesajı kuralı eklendi (işletme numarası başına aylık ilk 1.000 ücretsiz, sonrası tarifeli); kategori/pazar ve iş ortağı ek ücretleri ayrıştırıldı. Sabit Türkiye TL fiyatı veya müşteri ölçümü eklenmedi."
     },
     {
       "slug": "telegram-whatsapp-karsilastirma",
@@ -229,8 +249,8 @@
       "description": "Telegram ve WhatsApp’ı müşteri erişimi, ekip bildirimleri, kurulum ve toplam gider açısından değerlendirme yöntemi.",
       "category": "Karşılaştırmalar",
       "author": "FuLab Araştırmalar",
-      "updatedAt": "2026-10-03",
-      "summary": "Kanalı yalnızca API maliyetine göre seçmeyin. Müşterilerin kullandığı kanal, görevin amacı, ekip alışkanlıkları ve tamamlanan işlem başına gider birlikte değerlendirilmelidir.",
+      "updatedAt": "2026-11-02",
+      "summary": "Kanalı yalnızca API maliyetine göre seçmeyin. Telegram Bot API güncellemeleri en fazla 24 saat saklar ve update_id ile tekrarlar ayırt edilebilir; WhatsApp hizmet mesajlarında aylık ücretsiz eşik sonrası ücret kuralı vardır. Ekip alışkanlığı, müşteri erişimi ve tamamlanan işlem başına gider birlikte değerlendirilmelidir.",
       "sections": [
         {
           "heading": "Önce iletişimin amacını belirleyin",
@@ -238,11 +258,11 @@
         },
         {
           "heading": "Telegram’ın teknik başlangıcı",
-          "text": "Telegram botu bir arka uç uygulamasına bağlanır. Resmi SSS, güncellemelerin webhook veya long polling ile alınabileceğini belirtir; iki yöntemin birlikte kullanılması uygun değildir. FuLab pilotunda ekip bildirimleri için olay kimliği, yetkili sohbet ve sorumlu kişi tanımlanır. Mesaj limiti, tekrar deneme ve hata kodları hesaba katılır. Standart bot kullanımı için mesaj ücretinin olmaması, sunucu ve bakım giderinin olmadığı anlamına gelmez."
+          "text": "Telegram Bot API, güncellemeleri almak için getUpdates (long polling) ve webhook olmak üzere birbirini dışlayan iki yöntem tanımlar; webhook ayarlıyken getUpdates kullanılamaz. Telegram'ın resmî Bot FAQ'si, sunucuda bekleyen güncellemelerin 24 saatten uzun tutulmadığını belirtir. Her Update nesnesindeki update_id, yinelenen veya sırası değişen güncellemeleri ayırt etmek için kullanılabilir. Bot, gelen update_id değerini kalıcı işlem günlüğüne yazmalı ve aynı olay tekrar geldiğinde ikinci iş emri üretmemelidir. Telegram'ın 24 saatlik kuyruğunu uzun süreli arşiv veya kesinti kurtarma deposu saymayın; kendi kalıcı kuyruğunuzu kurun."
         },
         {
           "heading": "WhatsApp tarafında değerlendirme",
-          "text": "WhatsApp Business Platform için kategori ve pazar bazındaki yürürlükte olan fiyatlandırma ayrıca kontrol edilmelidir. Sağlayıcı paneli, operatöre aktarım, müşteri yanıtı takibi ve mevcut telefon numarasıyla kullanım koşulları seçilen kurulumda incelenir. Kişisel uygulamada elle mesaj göndermek ile API üzerinden işletme otomasyonu aynı kurulum değildir. FuLab bu karşılaştırmada iki platform için de tüm kullanım türlerini kapsayan ücretsiz çalışma sözü vermez."
+          "text": "WhatsApp Business Platform ücretleri teslim edilen mesaj, alıcı pazarı ve kategoriye bağlıdır. Meta'nın resmî SSS'si 1 Ekim 2026'dan itibaren her işletme telefon numarası için aylık ilk 1.000 hizmet mesajının ücretsiz, 1.001'inci ve sonraki hizmet mesajlarının tarifeli olduğunu belirtir. Gerçek kullanım ve teklif öncesinde Meta hesabındaki güncel Türkiye rate card'ı, mesaj kategorisi ve sağlayıcı ek ücretleri doğrulanmalıdır. Kişisel uygulamada elle mesaj göndermek ile API üzerinden işletme otomasyonu aynı kurulum değildir."
         },
         {
           "heading": "Aynı senaryoyu iki kanalda deneyin",
@@ -255,15 +275,23 @@
       ],
       "sources": [
         {
-          "label": "Telegram — Bot SSS",
+          "label": "Telegram — Bot API",
+          "url": "https://core.telegram.org/bots/api"
+        },
+        {
+          "label": "Telegram — Bot FAQ",
           "url": "https://core.telegram.org/bots/faq"
+        },
+        {
+          "label": "WhatsApp — resmî fiyatlandırma SSS",
+          "url": "https://whatsappbusiness.com/resources/faq/"
         },
         {
           "label": "WhatsApp — Business Platform fiyatlandırması",
           "url": "https://whatsappbusiness.com/products/platform-pricing/"
         }
       ],
-      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+      "changeNote": "2 Kasım 2026 teknik/fiyat güncellemesi: Telegram Bot API'deki getUpdates-webhook karşılıklı dışlama, 24 saatlik güncelleme saklama ve update_id ile tekilleştirme bilgileri; WhatsApp hizmet mesajı için 1.000 aylık ücretsiz eşik eklendi."
     },
     {
       "slug": "teklif-hazirlama-sure-testi",
@@ -271,7 +299,7 @@
       "description": "AI ile teklif hazırlamanın süre ve doğruluk etkisini aynı örnekler üzerinden ölçmek için pilot protokolü.",
       "category": "Araştırmalar",
       "author": "FuLab Araştırmalar",
-      "updatedAt": "2026-10-03",
+      "updatedAt": "2026-11-02",
       "summary": "AI destekli teklifin hızını, düzeltme ve onay süresi dahil ölçün. Fiyat, miktar ve kapsam hatası içeren hızlı bir taslağı başarılı teklif saymayın.",
       "sections": [
         {
@@ -293,6 +321,10 @@
         {
           "heading": "Sonucun kullanım sınırı",
           "text": "Bu rehberde tamamlanmış bir süre testi veya yüzde tasarruf sonucu yoktur. Pilot tamamlandığında örnek sayısı, tarih aralığı, iş hacmi, model ve değerlendirme koşullarıyla birlikte sonuç eklenebilir. Daha hızlı hazırlanan teklifin satışa dönüşmesi ayrı bir ölçümdür. İlk devreye almada AI yalnızca taslak hazırlasın; dışarı gönderilecek belgeyi teklif sorumlusu onaylasın. Model veya şablon değişince aynı test örnekleri tekrar çalıştırılsın."
+        },
+        {
+          "heading": "ERP'ye teklif kaydı ayrı bir onay adımıdır",
+          "text": "AI tarafından hazırlanan teklif taslağını ERP'ye yazmak, metin üretiminden ayrı bir işlemdir. Mikro'nun resmî API dokümantasyonunda Verilen Teklif kayıt grubu ve teklif kaydetme/düzeltme yöntemleri listelenir. Mikro API sürüm günlüğünde 17.08a sürümü 12 Ekim 2026 tarihli görünür. Kurulu ürün/sürüm, firma ve çalışma yılı, endpoint alanları ve lisans koşulları doğrulanmalı; kayıt yalnızca yetkili onayından sonra test firmasında oluşturulmalı ve dönen kayıt kimliği ile tutarlar tekrar okunmalıdır. API sırlarını loglara veya repoya yazmayın."
         }
       ],
       "sources": [
@@ -301,11 +333,15 @@
           "url": "https://developers.openai.com/api/docs/guides/evals"
         },
         {
-          "label": "Mikro — API entegrasyon rehberi",
-          "url": "https://apidocs.mikro.com.tr/guides"
+          "label": "Mikro API — Verilen Teklif endpointleri",
+          "url": "https://apidocs.mikro.com.tr/apis/verilen-teklif"
+        },
+        {
+          "label": "Mikro API — sürüm güncellemeleri (17.08a, 12.10.2026)",
+          "url": "https://apidocs.mikro.com.tr/changelog"
         }
       ],
-      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+      "changeNote": "2 Kasım 2026 teknik güncellemesi: Mikro API'nin Verilen Teklif endpointleri ve 12 Ekim 2026 tarihli 17.08a sürüm notları eklendi. ERP yazımı insan onayı, test firma ve readback şartı olarak ayrıldı; ölçülmüş süre veya müşteri sonucu eklenmedi."
     },
     {
       "slug": "logo-mikro-belge-isleme",
@@ -313,12 +349,12 @@
       "description": "Logo ve Mikro verileriyle belge işlemede alan eşleştirme, test şirketi ve kontrollü aktarım yöntemi.",
       "category": "İş akışları",
       "author": "FuLab Araştırmalar",
-      "updatedAt": "2026-10-03",
+      "updatedAt": "2026-11-02",
       "summary": "Önce ürününüzün sürümünü, desteklenen bağlantısını ve test ortamını doğrulayın. Belgeden çıkarılan bilgiyi doğrulamadan muhasebe kaydına dönüştürmeyin.",
       "sections": [
         {
           "heading": "Her kurulum aynı değildir",
-          "text": "Logo ve Mikro adları tek bir API sözleşmesi veya tek bir ürün anlamına gelmez. Kullanılan ürün, sürüm, lisans, firma ve çalışma dönemi belirlenmelidir. Logo’nun resmi entegrasyon çözümü veri alışverişi ve API desteğini açıklar; Mikro’nun resmi rehberi REST ve JSON tabanlı iletişimi anlatır. Bunlar mevcut işletme kurulumunun her işlemi desteklediği anlamına gelmez. İlgili ürünün yetkili teknik dokümanı ve erişim koşullarıyla ilerleyin."
+          "text": "Logo ve Mikro adları tek bir API sözleşmesi veya tek bir ürün anlamına gelmez. Logo'nun resmî ürün sayfası, farklı noktalarda yapılan işlemlerin çıktısını merkezî bir platformda birleştiren Veri Toplama ve Entegrasyon çözümünü tanımlar; tek başına her Logo ürünü ve lisansı için kullanılabilecek evrensel API endpointlerini belgelediği anlamına gelmez. Kullanılan Logo ürünü, sürüm, lisans, entegrasyon modülü ve desteklenen arayüz yetkili teknik doküman veya çözüm ortağı üzerinden doğrulanmalıdır. Mikro'nun resmî API dokümantasyonunda yöntem ve endpoint kataloğu ile ayrı bir sürüm günlüğü bulunur. 2 Kasım 2026 kontrolünde sürüm günlüğünün son görünen kaydı 17.08a ve 12 Ekim 2026 tarihidir. Kurulu Mikro sürümünün desteklediği endpoint ve alanları sürüm günlüğüyle karşılaştırın."
         },
         {
           "heading": "Belgeyi kayıt şemasına dönüştürme",
@@ -330,7 +366,7 @@
         },
         {
           "heading": "Testten canlı sisteme geçiş",
-          "text": "Önerilen pilotta önce kurgu belgeler ve ayrı test firmasıyla yalnızca okuma ve taslak işlemleri yürütülür. Sonra onaylı tek bir kayıt türünde yazma denenir ve yazılan kaydın çıktısı tekrar okunur. API parolası ve anahtarı web sayfasına veya kamuya açık repoya konmaz. Başarısız yazma işleminde aynı belgeyi tekrar denemeden önce kayıt oluşup oluşmadığını kontrol edin. Geri alma yöntemi ve erişim sorumlusu baştan tanımlansın."
+          "text": "Önerilen pilotta önce kurgu belgeler ve ayrı test firmasıyla yalnızca okuma ve taslak işlemleri yürütülür. Sonra onaylı tek bir kayıt türünde yazma denenir ve yazılan kaydın çıktısı tekrar okunur. Mikro API kullanılıyorsa güncel yöntem kataloğu ve sürüm günlüğündeki endpoint değişiklikleri kontrol edilir; Logo kullanılıyorsa ürün/sürüm ve lisans için desteklenen entegrasyon yolu ayrıca teyit edilir. API parolası ve anahtarı web sayfasına, loglara veya kamuya açık repoya konmaz. Başarısız yazma işleminde aynı belgeyi tekrar denemeden önce kayıt oluşup oluşmadığını kontrol edin."
         },
         {
           "heading": "Pilot raporu",
@@ -339,15 +375,19 @@
       ],
       "sources": [
         {
-          "label": "Mikro — API entegrasyon rehberi",
-          "url": "https://apidocs.mikro.com.tr/guides"
+          "label": "Mikro API — yöntemler ve endpointler",
+          "url": "https://apidocs.mikro.com.tr/apis"
         },
         {
-          "label": "Logo — veri toplama ve entegrasyon",
+          "label": "Mikro API — sürüm güncellemeleri (17.08a, 12.10.2026)",
+          "url": "https://apidocs.mikro.com.tr/changelog"
+        },
+        {
+          "label": "Logo — Veri Toplama ve Entegrasyon ürün açıklaması",
           "url": "https://www.logo.com.tr/urun/logo-veri-toplama-ve-entegrasyon-cozumu"
         }
       ],
-      "changeNote": "İlk sürüm: kaynakları kontrol edilmiş uygulama rehberi ve FuLab tarafından önerilen pilot yöntemi. Müşteri ölçümü veya tamamlanmış saha testi değildir."
+      "changeNote": "2 Kasım 2026 kaynak/teknik güncellemesi: Logo ürün sayfasının genel entegrasyon kapsamı ile ürün bazlı API sözleşmesi ayrıştırıldı. Mikro API yöntem kataloğu ve 12 Ekim 2026 tarihli 17.08a sürüm günlüğü eklendi; ürün/sürüm doğrulaması şartı netleştirildi."
     },
     {
       "slug": "kobi-hibrit-ai-asistani",
