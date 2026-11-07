@@ -662,6 +662,60 @@
         }
       ],
       "changeNote": "İlk yayın taslağı, 31 Ekim 2026. Resmî kaynaklardaki teknik bilgiler ile FuLab’ın tasarım önerileri ayrılmıştır. Gerçek müşteri ölçümü veya belirli bir uygulama entegrasyonu iddiası içermez."
+    },
+    {
+      "slug": "musteri-geri-bildirim-otomasyonu",
+      "title": "Müşteri geri bildirimleri otomasyonla nasıl yönetilir?",
+      "description": "Geri bildirimleri sınıflandırma, doğru ekibe yönlendirme ve insan onaylı yanıt akışına bağlamak için pilot rehberi.",
+      "category": "İş akışları",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-11-07",
+      "summary": "Geri bildirimi otomatik yanıtla kapatmak yerine önce kayıt altına alın, türünü ve aciliyetini belirleyin, sorumlu ekibe yönlendirin. AI sınıflandırma ve yanıt taslağı hazırlamada yardımcı olabilir; iade, güvenlik, hukuki iddia veya belirsiz olaylarda kararı yetkili çalışan vermelidir.",
+      "sections": [
+        {
+          "heading": "Tek bir geri bildirim kanalından başlayın",
+          "text": "İlk pilot için web formu, destek e-postası veya müşteri hizmetleri kayıtlarından yalnızca birini seçin. Her kayıt için benzersiz başvuru kimliği, alım zamanı, kanal, konu, durum ve sorumlu ekip alanlarını belirleyin. Müşteri aynı başvuruyu tekrar gönderirse yeni iş açmak yerine kayıtları ilişkilendirin. Sosyal medya, herkese açık yorumlar ve özel mesajlar farklı kullanım koşullarına sahip olabileceğinden, izin ve platform kurallarını incelemeden bunları otomatik toplamaya başlamayın."
+        },
+        {
+          "heading": "Sınıflandırmayı iş kararından ayrı tutun",
+          "text": "AI; mesajı ürün sorunu, teslimat, ödeme, öneri veya memnuniyet gibi işletmenin tanımladığı kategorilere ayırmayı önerebilir. Acil, güvenlik riski taşıyan, hukuki iddia içeren veya anlaşılması zor kayıtları insan incelemesine yönlendirin. Modelin güven düzeyi düşükse sınıfı kesinleştirmek yerine 'inceleme gerekli' durumunu kullanın. Kategori listesi ve hangi olayın hangi ekibe gideceği iş sahibi tarafından belirlenmelidir."
+        },
+        {
+          "heading": "Her kaydı bir sonraki adıma bağlayın",
+          "text": "Önerilen akış: kayıt alındı, mükerrer kontrolü yapıldı, konu önerildi, sorumluya atandı, yanıt taslağı hazırlandı, çalışan onayladı, yanıt gönderildi ve sonuç doğrulandı. Atama, dışarı gönderilen yanıt ve çözüm birbirinden ayrı olaylardır. Otomasyon kaydı oluşturduktan sonra hedef sistemdeki başvuru kimliğini tekrar okuyarak yazmanın başarılı olduğunu doğrulayın. Bağlantı kesintisinde aynı kaydın ikinci kez açılmasını engelleyin."
+        },
+        {
+          "heading": "Yanıtı taslak olarak hazırlayın",
+          "text": "AI yanıt önerisini yalnızca başvurudaki ve işletmenin onaylı bilgi kaynağındaki verilere dayandırın. İade tutarı, indirim, teslim tarihi veya teknik çözüm uydurmasına izin vermeyin. Çalışan yanıtı onaylarken doğru müşteri, doğru kanal ve yapılacak taahhütleri birlikte görmelidir. İlk pilotta otomatik yanıt yerine insan onaylı taslak kullanın; müşteriyle iletişime geçilemediğinde veya çözüm tamamlanmadığında durumu açıkça belirtin."
+        },
+        {
+          "heading": "Kişisel veriyi amaçla sınırlayın",
+          "text": "Müşteri geri bildiriminde ad, telefon, sipariş ve sağlık bilgisi gibi kişisel veriler bulunabilir. İş akışı için gerekli alanları belirleyin, gereksiz ekleri veya mesaj geçmişini modele ve günlük kayıtlarına taşımayın, erişimi görevli kişilerle sınırlandırın ve saklama süresini belirleyin. KVKK'nın açıkladığı genel ilkeler; belirli ve meşru amaç, amaçla bağlantılı sınırlı ve ölçülü kullanım ile gerekli süre kadar muhafazayı içerir. Bu yazı genel bir operasyon rehberidir; her kuruluşun hukuki dayanağı ve aydınlatma yükümlülüğü somut süreç için ayrıca değerlendirilmelidir."
+        },
+        {
+          "heading": "Sonucu ölçün, sadece yanıt hızını değil",
+          "text": "Pilot başlamadan önce başvurudan ilk insan incelemesine kadar süreyi, doğru ekibe yönlendirme oranını, yanlış sınıflandırmayı, tekrar açılan kayıtları, çözüm süresini ve çalışan düzeltme süresini tanımlayın. Memnuniyet ölçümü kullanılıyorsa hangi yanıtların alındığını ve örneklem kapsamını belirtin. Otomatik gönderilen mesaj sayısı tek başına başarı değildir. NIST AI Risk Management Framework, AI sistemlerini kullanım bağlamı ve riskleriyle birlikte değerlendirmek için gönüllü bir çerçeve sunar; bu rehberdeki metrikler FuLab'ın önerisidir ve ölçülmüş müşteri sonucu değildir."
+        },
+        {
+          "heading": "Hata ve eskalasyon yolunu önceden belirleyin",
+          "text": "Kaynağa erişilemediğinde, kayıt oluşturulamadığında veya bildirim gönderilemediğinde işin hangi kuyrukta kalacağını belirleyin. Geçici hatalarda sınırlı yeniden deneme yapılabilir; sonuç belirsizse yeni başvuru oluşturmadan önce hedef sistem kontrol edilmelidir. Güvenlik, ödeme, kişisel verinin yanlış kişiye gönderilmesi ve kamuya açık yanıt gibi yüksek etkili durumlar için otomatik akışı durdurup yetkili kişiye aktarın. Her eskalasyonda başvuru numarası, neden ve son başarılı adım görünür olsun."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Kişisel Verileri Koruma Kurumu — Kişisel Verilerin İşlenmesine İlişkin Temel İlkeler",
+          "url": "https://www.kvkk.gov.tr/Icerik/4189/Kisisel-Verilerin-Islenmesine-Iliskin-Temel-Ilkeler"
+        },
+        {
+          "label": "NIST — AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+        },
+        {
+          "label": "NIST — Generative Artificial Intelligence Profile",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+        }
+      ],
+      "changeNote": "İlk yayın taslağı, 7 Kasım 2026. KVKK ve NIST kaynakları genel ilkeler ve risk yönetimi bağlamında kullanılmıştır; somut hukuki değerlendirme, müşteri başarı sonucu veya ölçülmüş verimlilik iddiası sunulmamaktadır."
     }
   ]
 }
