@@ -662,6 +662,68 @@
         }
       ],
       "changeNote": "İlk yayın taslağı, 31 Ekim 2026. Resmî kaynaklardaki teknik bilgiler ile FuLab’ın tasarım önerileri ayrılmıştır. Gerçek müşteri ölçümü veya belirli bir uygulama entegrasyonu iddiası içermez."
+    },
+    {
+      "slug": "teknik-servis-saha-ekibi-is-emri-otomasyonu",
+      "title": "Teknik servis ve saha ekipleri için iş emri otomasyonu",
+      "description": "Servis talebinden planlama, saha ziyareti, kullanılan parça ve kapanış kaydına uzanan iş emri akışı için pilot rehberi.",
+      "category": "Sektörler",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-11-14",
+      "summary": "Saha servis otomasyonu, müşteri talebini izlenebilir bir iş emrine bağlar; uygun ekip ve zaman aralığıyla planlamayı, saha durumunu ve kapanış kontrolünü tek akışta takip eder. AI talebi özetleyip kategori önerebilir; atama, parça kullanımı ve müşteri taahhüdü işletmenin onaylı kurallarıyla yürütülmelidir.",
+      "sections": [
+        {
+          "heading": "Talebi standart bir iş emrine dönüştürün",
+          "text": "İlk pilotta telefon, form veya destek e-postası gibi tek bir giriş kanalı seçin. Her iş emrinde başvuru kimliği, müşteri ve hizmet konumu, ekipmanın tanımı, arıza açıklaması, öncelik gerekçesi, istenen zaman aralığı ve sorumlu kişi bulunsun. Aynı başvuru tekrar geldiğinde yeni emir açmak yerine mevcut kayıtla ilişkilendirin. Microsoft Field Service belgeleri iş emirlerini müşteri konumunda veya ekipman üzerinde yapılacak işi, görevleri, ürünleri ve hizmetleri bir araya getiren kayıtlar olarak açıklar; bu, burada önerilen genel iş akışına örnektir."
+        },
+        {
+          "heading": "Öncelik ve beceri kurallarını işletme belirlesin",
+          "text": "Arıza türü, ekipman, müşteri taahhüdü ve operasyonun etkisine göre hangi işin önce ele alınacağını yazılı kurallara bağlayın. Öncelik etiketini yalnızca modelin serbest metin yorumuna bırakmayın. AI arıza açıklamasını özetleyebilir ve olası kategori önerebilir; eksik bilgi, güvenlik riski veya sınıflandırma belirsizliği varsa işi insan incelemesine yönlendirin. Hangi sertifika, beceri veya ekipman gereğinin bir teknisyeni uygun kıldığına operasyon sorumlusu karar vermelidir."
+        },
+        {
+          "heading": "İş emri ile randevu atamasını ayrı izleyin",
+          "text": "Bir iş emrinin açılması, teknisyen ve zaman seçiminin tamamlandığı anlamına gelmez. Önerilen kayıtta talep, iş emri, kaynak/teknisyen gereksinimi ve takvim randevusu bağlantılı ama ayrı durumlar taşır. Planlamada teknisyenin uygunluğu, gerekli beceri, hizmet bölgesi, yol süresi ve müşteriye verilen zaman aralığı dikkate alınabilir. Microsoft'un Field Service belgeleri de work order ile booking kavramlarını ve randevunun kaynak, başlangıç-bitiş zamanı ve durum bilgilerini ayrı kayıtlar olarak ele alır. Bu ürün davranışı FuLab'ın belirli bir yazılım kurduğu anlamına gelmez."
+        },
+        {
+          "heading": "Saha durumunu olaylarla doğrulayın",
+          "text": "Önerilen durum akışı planlandı, yola çıktı, çalışma başladı, parça bekliyor, tamamlandı ve kontrol bekliyor gibi işletmenizin kullandığı adımları içerebilir. Her değişikliğin kim tarafından ve ne zaman kaydedildiğini tutun. İş emrinin tamamlandı görünmesi teknisyen ziyareti, müşteri teyidi veya iş raporu doğrulandı demek değildir; bu koşulları ayrı tanımlayın. Microsoft Field Service örneklerinde booking durumu saha ilerlemesini gösterebilir ve zaman damgaları kaydedilir. Kendi sisteminizde hangi olayların gerçekten kayda geçtiğini pilotta doğrulayın."
+        },
+        {
+          "heading": "Yedek parça ve kapanış kontrolünü bağlayın",
+          "text": "İş için gereken parçaları önceden listeleyin; depodan ayrılan, teknisyene teslim edilen, kullanılan ve iade edilen miktarları ayrı hareketlerle kaydedin. Parça yoksa iş emrini kapatmak yerine bekleme nedeni ve takip sorumlusu belirleyin. Kapanışta yapılan işlem, kullanılan malzeme, ek iş ihtiyacı ve varsa müşteri onayı kontrol edilsin. Stok düzeltmesi, ücret veya fatura oluşturma gibi mali etkili adımlar için yetkili onayı ve hedef sistemde kayıt doğrulaması kullanın."
+        },
+        {
+          "heading": "Tekrarlayan bakım ile arıza çağrısını ayırın",
+          "text": "Tek seferlik arıza talebi ile takvime bağlı periyodik bakım aynı tetikleyici değildir. Bakım planı, ekipman, tarih aralığı ve yapılacak kontrol listesi üzerinden önceden iş emri oluşturabilir; arıza çağrısı ise yeni müşteri bildirimiyle başlar. İki akışın tekrar kayıt, tarih değişikliği ve iptal kuralları ayrı test edilmelidir. Microsoft, Dynamics 365 Field Service içinde anlaşmalara bağlı yinelenen iş emri oluşturma olanağını ürün özelliği olarak belgeliyor; başka yazılımlarda aynı özelliğin bulunduğu varsayılmamalıdır."
+        },
+        {
+          "heading": "Küçük bir pilotla ölçün",
+          "text": "Tek servis türü, sınırlı ekip ve tek hizmet bölgesiyle başlayın. Yinelenen talep, eksik adres, beceri uyuşmazlığı, müşteri randevu değişikliği, parça yokluğu, teknisyen çevrimdışı kalması ve yanlışlıkla tekrar atama senaryolarını deneyin. Talebin açılmasından ilk atamaya kadar geçen süreyi, randevu değişikliklerini, ilk ziyarette tamamlanma oranını, tekrar ziyaretleri, kullanılan parça farkını ve kapanış düzeltmelerini kayıt altına alın. Başlangıç ve bitiş ölçütlerini önceden belirleyin; bu metrikler FuLab'ın pilot önerisidir, ölçülmüş müşteri sonucu değildir."
+        },
+        {
+          "heading": "Kesinti ve tekrar çalıştırma davranışını tasarlayın",
+          "text": "Bir form, saha cihazı veya entegrasyon aynı talebi yeniden gönderirse kaynak kimliğiyle mevcut iş emrini bulun; ikinci bir emir veya teknisyen ataması üretmeyin. Yazma sonucu belirsizse yeniden denemeden önce hedef sistemde kayıt arayın. Müşteriye giden randevu bildirimi, takvimdeki booking ve teknisyenin iş durumunu ayrı doğrulayın. Bağlantı geri geldiğinde bekleyen işleri sorumlu ve son başarılı adımla birlikte inceleme kuyruğuna alın."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Microsoft Learn — Get started with Dynamics 365 Field Service",
+          "url": "https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-get-started"
+        },
+        {
+          "label": "Microsoft Learn — Create a work order",
+          "url": "https://learn.microsoft.com/en-us/dynamics365/field-service/create-work-order"
+        },
+        {
+          "label": "Microsoft Learn — Schedule a standard work order",
+          "url": "https://learn.microsoft.com/en-us/dynamics365/field-service/scenario-normal-scheduling"
+        },
+        {
+          "label": "Microsoft Learn — Create work orders from an agreement",
+          "url": "https://learn.microsoft.com/en-us/dynamics365/field-service/create-work-order-from-agreement"
+        }
+      ],
+      "changeNote": "İlk yayın taslağı, 14 Kasım 2026. Microsoft kaynakları ürün özelliği örnekleri için kullanılmıştır; FuLab önerileri ve ölçüm planı ayrı belirtilmiştir. Sahada ölçülmüş sonuç veya belirli bir Field Service kurulumu iddiası yoktur."
     }
   ]
 }
