@@ -662,6 +662,56 @@
         }
       ],
       "changeNote": "İlk yayın taslağı, 31 Ekim 2026. Resmî kaynaklardaki teknik bilgiler ile FuLab’ın tasarım önerileri ayrılmıştır. Gerçek müşteri ölçümü veya belirli bir uygulama entegrasyonu iddiası içermez."
+    },
+    {
+      "slug": "randevu-rezervasyon-otomasyonu",
+      "title": "Randevu ve rezervasyon otomasyonu: çakışmasız bir akış nasıl kurulur?",
+      "description": "İşletmeler için randevu talebini uygunluk kontrolü, onay, takvim kaydı ve iptal takibiyle yöneten otomasyon tasarımı.",
+      "category": "İş akışları",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-11-22",
+      "summary": "Randevu otomasyonunu yalnızca takvime etkinlik eklemek olarak düşünmeyin. Uygunluk kontrolü, müşteri onayı, tekrar kayıt önleme ve iptal akışı birlikte tasarlanmalıdır. Bu rehber bir uygulama yöntemi sunar; ölçülmüş müşteri sonucu içermez.",
+      "sections": [
+        {
+          "heading": "Önce süreci ve sınırları belirleyin",
+          "text": "FuLab’ın önerdiği başlangıç kapsamı tek hizmet türü, tek takvim ve sınırlı bir tarih aralığıdır. Talep formunda yalnızca randevuyu planlamak için gerekli bilgileri alın: hizmet türü, tercih edilen zaman aralığı, ad ve dönüş kanalı. Sağlık veya başka özel nitelikli bilgi gerektiren alanları bu akışa eklemeyin. İşletmenin çalışma saatleri, randevu süresi, hazırlık aralığı ve iptal kuralı yazılı olarak tanımlansın."
+        },
+        {
+          "heading": "Uygunluğu kontrol edin, saati kesinleştirmeyin",
+          "text": "Google Calendar API’nin FreeBusy sorgusu seçilen takvimler için belirli zaman aralığındaki meşguliyet bilgisini döndürür. Bu sonuç uygunluğu değerlendirmek için kullanılabilir; ancak eşzamanlı talepler varsa sorgu ile etkinlik oluşturma arasında başka bir kayıt yapılabilir. Bu nedenle müşteriye saat önermek ile randevuyu kesinleştirmek ayrı adımlar olmalıdır. Takvim erişimi yoksa veya cevap alınamazsa otomasyon saati kesinleşmiş gibi göstermemeli, talebi ekibe aktarmalıdır."
+        },
+        {
+          "heading": "Onaydan sonra takvim kaydı oluşturun",
+          "text": "Önerilen akış, uygun saatleri müşteriye sunar ve seçimini açıkça onaylatır. Onay geldikten sonra takvim etkinliği oluşturulur; başlangıç, bitiş ve saat dilimi açıkça yazılır. Google Calendar API etkinlik oluştururken takvim üzerinde yazma yetkisi ve uygun OAuth kapsamı ister. Her talep için tekrar kullanılabilir benzersiz bir etkinlik kimliği belirlemek, istek başarılı olduğu halde yanıt kaybolduğunda aynı randevunun iki kez eklenmesi riskini azaltabilir. Bu mekanizma tek başına tüm mükerrer kayıt türlerini çözmez; talep kaydıyla birlikte kontrol edilmelidir."
+        },
+        {
+          "heading": "Bildirim, değişiklik ve iptal durumlarını izleyin",
+          "text": "Randevu oluşturuldu, onay bekliyor, değişiklik istendi, iptal edildi ve hata oluştu gibi durumları ayrı kaydedin. Takvim kaydı başarıyla oluşturulmadan müşteriye kesin onay mesajı göndermeyin. Hatırlatmaların hangi kanaldan gönderileceği ayrıca belirlenmelidir: takvim hatırlatmaları ile WhatsApp veya e-posta üzerinden gönderilen işletme bildirimleri aynı entegrasyon değildir. İptal veya saat değişikliğinde hem takvim kaydı hem müşteriye giden bilgilendirme güncellenmelidir."
+        },
+        {
+          "heading": "Erişimi ve kişisel veriyi sınırlayın",
+          "text": "Takvime yalnızca gerekli kullanıcı ve servis hesabı erişsin; kullanılacak OAuth kapsamı ihtiyaca göre seçilsin. Randevu açıklamasına gereksiz müşteri ayrıntıları koymayın ve loglarda kişisel veriyi maskeleyin. Saklama süresi, erişim sorumlusu ve silme yöntemi pilot başlamadan belirlenmelidir. Bunlar FuLab’ın süreç önerileridir; hukuki uygunluk değerlendirmesi yerine geçmez."
+        },
+        {
+          "heading": "Pilot nasıl ölçülür?",
+          "text": "İki hafta gibi önceden belirlenmiş bir test döneminde talep sayısını, uygun saat bulunamayan talepleri, çakışmaları, mükerrer kayıtları, insan müdahalesini, iptal/değişiklikleri ve talep başına işlem süresini kaydedin. Normal talep, eşzamanlı iki talep, takvim erişim hatası, müşteri yanıt vermemesi ve iptal senaryolarını deneyin. Başarı eşiğini işletmenin mevcut başlangıç değerine göre pilot öncesinde belirleyin. Bu yazıda ölçülmüş bir hız, gelir veya hata azalması sonucu iddia edilmiyor."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Google Calendar API — FreeBusy sorgusu",
+          "url": "https://developers.google.com/workspace/calendar/api/v3/reference/freebusy/query"
+        },
+        {
+          "label": "Google Calendar API — etkinlik oluşturma",
+          "url": "https://developers.google.com/workspace/calendar/api/guides/create-events"
+        },
+        {
+          "label": "Google Calendar API — events.insert başvurusu",
+          "url": "https://developers.google.com/workspace/calendar/api/v3/reference/events/insert"
+        }
+      ],
+      "changeNote": "İlk sürüm: Google’ın resmi Calendar API belgelerine dayalı süreç taslağı. İş akışı ve pilot ölçümleri FuLab önerisidir; müşteri verisiyle test edilmiş sonuç değildir."
     }
   ]
 }
