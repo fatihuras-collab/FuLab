@@ -662,6 +662,64 @@
         }
       ],
       "changeNote": "İlk yayın taslağı, 31 Ekim 2026. Resmî kaynaklardaki teknik bilgiler ile FuLab’ın tasarım önerileri ayrılmıştır. Gerçek müşteri ölçümü veya belirli bir uygulama entegrasyonu iddiası içermez."
+    },
+    {
+      "slug": "kafe-ve-oyun-kafesi-yogunluk-takibi",
+      "title": "Kafe ve oyun kafesinde masa ve oturum yoğunluğu nasıl takip edilir?",
+      "description": "Masa durumu, sipariş bekleme, temizlik ve PlayStation oturum süresini tek operasyon akışında izlemek için pilot tasarımı.",
+      "category": "Sektörler",
+      "author": "FuLab Araştırmalar",
+      "updatedAt": "2026-11-28",
+      "summary": "Yoğunluğu anlamak için yalnızca kaç müşterinin geldiğini değil, masa ve oyun alanlarının durumunu da kaydedin. Bu rehber, kafe ve PlayStation kafe operasyonu için önerilen bir takip akışı sunar; ölçülmüş müşteri sonucu veya hazır ürün özelliği iddiası içermez.",
+      "sections": [
+        {
+          "heading": "Yoğunluğu hangi sorular için izleyeceksiniz?",
+          "text": "Önce işletmenin karar ihtiyacını belirleyin: hangi masalar boş, hangileri sipariş bekliyor, hangi alan temizlenmeyi bekliyor, oyun istasyonları ne kadar süre kullanılıyor? FuLab’ın önerisi bu soruları tek bir ekranda toplayan, ancak her durumun kaynağını da gösteren sade bir pilotla başlamaktır. Bir ekranın dolu görünmesi tek başına doğru veri anlamına gelmez; kayıtların hangi personel veya sistem tarafından ve ne zaman güncellendiği izlenmelidir."
+        },
+        {
+          "heading": "Kafe masası için durum akışı kurun",
+          "text": "Örnek masa durumları: boş ve hazır, müşteri oturdu, sipariş bekliyor, sipariş iletildi, servis sürüyor, hesap bekliyor, temizlik bekliyor ve yeniden kullanıma hazır. Garson masayı ve sipariş aşamasını mobil cihazdan veya ortak panelden güncelleyebilir; temizlik tamamlandığında görevli masayı hazır olarak işaretler. Square’in resmi restoran dokümanları da masa planı, oturum/masa göstergeleri ve geçen süre takibi gibi masa yönetimi örnekleri anlatıyor; bazı özellikler ürün planına bağlıdır. Bu, FuLab yazılımında bu özelliklerin şimdiden bulunduğu anlamına gelmez."
+        },
+        {
+          "heading": "Sipariş almadan oturan masaları görünür kılın",
+          "text": "Bir masa dolu olarak işaretlendiği halde belirlenen süre içinde sipariş aşamasına geçmediyse sistem sorumlu garsona veya işletme sahibine uyarı gösterebilir. Eşik süresi işletmenin servis düzenine göre belirlenmelidir; evrensel bir bekleme süresi varsaymayın. Uyarı müşterinin sipariş vermediğini kendiliğinden bilmez: personel masa durumunu güncellemeli veya sipariş sistemiyle güvenilir bir bağlantı kurulmalıdır."
+        },
+        {
+          "heading": "Temizlik durumunu doğru kaydedin",
+          "text": "Müşteri ayrıldığında masa temizlik bekliyor durumuna alınır. Görevli temizliği bitirince masayı hazır olarak işaretler; uzun süre açık kalan görevler panelde önceliklendirilebilir. Temizlik durumu, kamera veya başka bir otomatik algılama bağlantısı yoksa personel girdisine dayanır. Otomatik algılama vaat etmeden önce gereken sensör, izinler, donanım ve bakım ayrıca değerlendirilmelidir."
+        },
+        {
+          "heading": "PlayStation kafe için oturum sayacı ekleyin",
+          "text": "Oyun alanı veya konsol başına oturum başlatma ve bitirme kaydı tutun. Örnek durumlar: boş, rezerve, kullanımda, süre uzatımı bekliyor ve bakımda. Başlangıç/bitiş saati ile işletmenin kendi ücretlendirme kuralı kaydedilebilir; panel açık oturumun geçen süresini ve kullanılabilir istasyon sayısını gösterebilir. FuLab’ın önerdiği başlangıç yöntemi personelin oturumu başlatıp bitirmesidir. Konsoldan otomatik süre alma, ayrı ve doğrulanması gereken bir entegrasyon konusudur."
+        },
+        {
+          "heading": "Sahip ekranında hangi göstergeler bulunsun?",
+          "text": "Canlı durum ekranında dolu ve hazır masa sayısı, sipariş bekleyen masalar, temizlik bekleyen işler, açık oyun oturumları ve müsait istasyonlar gösterilebilir. Gün sonu raporunda saat dilimine göre doluluk, masa kullanım süresi, oturum süresi, sipariş bekleme aralığı ve tamamlanan temizlik görevleri incelenebilir. Bu göstergeler işletme için önerilen tasarım seçenekleridir; otomatik gelir artışı veya daha hızlı servis sonucu olarak sunulmamalıdır."
+        },
+        {
+          "heading": "Pilot senaryoları ve ölçüm",
+          "text": "Önce tek bir bölümde veya birkaç oyun istasyonunda pilot yapın. Müşterinin oturması, siparişin gecikmesi, masa değişimi, temizlik görevinin unutulması, oturumun uzatılması, personelin kaydı kapatmayı unutması ve bağlantının kesilmesi senaryolarını deneyin. Başlamadan önce güncel işleyişi ölçün; pilotta kayıtların güncelliğini, açık kalan görevleri, durum uyuşmazlıklarını, personel başına yapılan güncelleme sayısını ve raporların karar vermeye katkısını karşılaştırın. Bu yazıda saha ölçümü yapılmış değildir; pilot ölçütleri FuLab önerisidir."
+        },
+        {
+          "heading": "Kişisel veriyi gereksiz yere toplamayın",
+          "text": "Yoğunluk ve masa/istasyon durumunu izlemek için çoğu zaman müşteri adı yerine masa veya istasyon numarası ve işlem zamanı yeterlidir. Müşteriyi tanımlayan bilgi yalnızca belirli bir iş ihtiyacı varsa ve işletmenin süreçleriyle uyumlu biçimde alınmalıdır. Loglarda personel erişimi, saklama süresi ve silme yöntemi belirlenmelidir. Bu bölüm süreç tasarım önerisidir; hukuki uygunluk değerlendirmesi değildir."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Square — Restoran kat planı oluşturma",
+          "url": "https://squareup.com/help/us/en/article/6427-building-your-floor-plan"
+        },
+        {
+          "label": "Square — Masa yönetimi ayarları ve süre göstergeleri",
+          "url": "https://squareup.com/help/us/en/article/8146-customize-table-management-settings"
+        },
+        {
+          "label": "Square — Masalarda oturum/kişi takibi",
+          "url": "https://squareup.com/help/us/en/article/8583-manage-seats-in-your-restaurant"
+        }
+      ],
+      "changeNote": "İlk sürüm: Resmi Square ürün belgeleri masa planı ve masa durumu takibi için örnek olarak incelendi. Önerilen kafe ve PlayStation kafe akışları FuLab tasarımıdır; bunlar mevcut ürün özellikleri veya ölçülmüş saha sonuçları olarak ileri sürülmemektedir."
     }
   ]
 }
